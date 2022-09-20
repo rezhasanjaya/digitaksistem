@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('department', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            $table->string('kode')->unique();
             $table->string('department');
             $table->timestamps();
         });

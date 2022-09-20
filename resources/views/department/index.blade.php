@@ -5,11 +5,20 @@
 <div>
     <div class="row">
         <div class="col-12">
+            @if ($message = Session::get('success'))
+            <div class="alert alert-primary alert-success fade show" role="alert">
+                <span class="alert-text"><strong>{{ $message }}!</strong></span>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+             @endif
             <div class="card mb-4 mx-4">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
                             <h5 class="mb-0">Data Department</h5>
+                           
                         </div>
                         <a href="{{ url('department/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Unit</a>
                     </div>
@@ -34,18 +43,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($departments as $dpr)
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $dpr->id }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">HRD</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $dpr->kode }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Human Resource Department</span>
+                                        <span class="text-secondary text-xs font-weight-bold">{{ $dpr->department }}</span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Unit">
+
+                                        <a href="{{ url('department/edit',$dpr->id) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Unit">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
                                         <span><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus Unit">
@@ -54,6 +65,7 @@
                                         </span>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

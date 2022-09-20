@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'department'], function () {
 		Route::get('/', [DepartmentController::class, 'index']);
 		Route::get('/tambah', [DepartmentController::class, 'tambah']);
+		Route::get('/edit{id}', [DepartmentController::class, 'edit']);
+		Route::post('/edit{id}', [DepartmentController::class, 'store']);
+		Route::resource('department', DepartmentController::class);
 	});
 
 	Route::get('user-management', function () {

@@ -8,14 +8,14 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Data Department</h5>
+                            <h5 class="mb-0">Edit Data Department</h5>
                         </div>
 
                     </div>
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('department.store') }}" method="POST">
+                    <form action="" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="kode" class="form-control-label">Kode Unit</label>
