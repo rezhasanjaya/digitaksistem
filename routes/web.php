@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -47,21 +48,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('laravel-examples/user-management');
 	})->name('user-management');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
-
-	Route::get('virtual-reality', function () {
-		return view('virtual-reality');
-	})->name('virtual-reality');
-
-	Route::get('static-sign-in', function () {
-		return view('static-sign-in');
-	})->name('sign-in');
-
-	Route::get('static-sign-up', function () {
-		return view('static-sign-up');
-	})->name('sign-up');
+	Route::group(['prefix' => 'karyawan'], function () {
+		Route::get('/', [KaryawanController::class, 'index']);
+		Route::get('/tambah', [KaryawanController::class, 'tambah']);
+	});
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);

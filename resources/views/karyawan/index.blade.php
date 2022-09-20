@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">Data Department</h5>
                         </div>
-                        <a href="{{ url('department/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Unit</a>
+                        <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Unit</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -20,13 +20,22 @@
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
+                                        No
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Kode
+                                        NIK
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Nama Unit / Department
+                                        Nama
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Jabatan
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        TTL
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Unit / Department
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Action
@@ -38,14 +47,23 @@
                                     <td class="ps-4">
                                         <p class="text-xs font-weight-bold mb-0">1</p>
                                     </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">HRD</p>
+                                    <td class="ps-4">
+                                        <p class="text-xs font-weight-bold mb-0">20144818</p>
                                     </td>
                                     <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Human Resource Department</span>
+                                        <p class="text-xs font-weight-bold mb-0">Gundala</p>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Unit">
+                                        <p class="text-xs font-weight-bold mb-0">Staff</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Jogjakarta, 12-06-1989</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">PLA / Plant and Maintenance</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
                                         <span><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus Unit">
