@@ -47,7 +47,7 @@
                                     <td class="ps-4">
                                         <p class="text-xs font-weight-bold mb-0">1</p>
                                     </td>
-                                    <td class="ps-4">
+                                    <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">20144818</p>
                                     </td>
                                     <td class="text-center">
