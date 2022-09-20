@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">Data Department</h5>
                         </div>
-                        <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Unit</a>
+                        <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Karyawan</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -66,7 +66,7 @@
                                         <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
-                                        <span><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus Unit">
+                                        <span><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus Data">
                                             <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                         </a>
                                         </span>
