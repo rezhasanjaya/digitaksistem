@@ -12,6 +12,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
 
+	Route::get('/', [DashboardController::class, 'home']);
 	Route::get('dashboard', function () {
 		return view('dashboard', ["title" => "Dashboard"]);
 	})->name('dashboard');
@@ -54,8 +56,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'karyawan'], function () {
 		Route::get('/', [KaryawanController::class, 'index']);
 		Route::get('/tambah', [KaryawanController::class, 'tambah']);
+		Route::resource('/karyawan', KaryawanController::class);
 	});
-	Route::resource('karyawan', KaryawanController::class);
+
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);

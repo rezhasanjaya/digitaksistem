@@ -17,7 +17,7 @@
                         <div>
                             <h5 class="mb-0">Data Department</h5>
                         </div>
-                        <a href="{{ route('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Karyawan</a>
+                        <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Karyawan</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
