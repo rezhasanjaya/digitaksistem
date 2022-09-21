@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function create()
     {
-        return view('session.register');
+        return view('session.register', ["title" => "Register"]);
     }
 
     public function store()
@@ -22,13 +22,13 @@ class RegisterController extends Controller
             'password' => ['required', 'min:5', 'max:20'],
             'agreement' => ['accepted']
         ]);
-        $attributes['password'] = bcrypt($attributes['password'] );
+        $attributes['password'] = bcrypt($attributes['password']);
 
-        
+
 
         session()->flash('success', 'Your account has been created.');
         $user = User::create($attributes);
-        Auth::login($user); 
+        Auth::login($user);
         return redirect('/dashboard');
     }
 }

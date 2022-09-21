@@ -24,7 +24,7 @@ class StoreDepartmentReq extends FormRequest
     public function rules()
     {
         return [
-            'kode' => 'required',
+            'kode'  => 'required|unique:department|min:1|max:3',
             'department' => 'required',
         ];
     }
