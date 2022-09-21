@@ -9,7 +9,6 @@ class Karyawan extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id',
         'nik',
         'nama',
         'jenis_kelamin',
@@ -23,5 +22,9 @@ class Karyawan extends Model
         'status_kawin',
         'goldar',
         'telp',
+    ];
+
+    protected $guarded = [
+        'id',
     ];
 }

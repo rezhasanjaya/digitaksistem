@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\InfoUserController;
@@ -26,35 +27,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
 
-	Route::get('/', [HomeController::class, 'home']);
 	Route::get('dashboard', function () {
-		return view('dashboard');
+		return view('dashboard', ["title" => "Dashboard"]);
 	})->name('dashboard');
 
 	Route::get('billing', function () {
-		return view('billing');
+		return view('billing', ["title" => "Kontrak Kerja"]);
 	})->name('billing');
 
 	Route::get('profile', function () {
-		return view('profile');
+		return view('profile', ["title" => "Profile"]);
 	})->name('profile');
 
 	Route::group(['prefix' => 'department'], function () {
 		Route::get('/', [DepartmentController::class, 'index']);
 		Route::get('/tambah', [DepartmentController::class, 'tambah']);
-		Route::get('/edit{id}', [DepartmentController::class, 'edit']);
-		Route::post('/edit{id}', [DepartmentController::class, 'store']);
+		Route::get('/edit', [DepartmentController::class], 'edit');
+		Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
 		Route::resource('department', DepartmentController::class);
 	});
 
 	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
+		return view('laravel-examples/user-management', ["title" => "Account Management"]);
 	})->name('user-management');
 
 	Route::group(['prefix' => 'karyawan'], function () {
 		Route::get('/', [KaryawanController::class, 'index']);
 		Route::get('/tambah', [KaryawanController::class, 'tambah']);
 	});
+	Route::resource('karyawan', KaryawanController::class);
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
