@@ -26,7 +26,7 @@
                         </div>
                     @endif
                     <div class="card-header pb-0 text-left bg-transparent">
-                        <h4 class="mb-0">Forgot your password? Enter your email here</h4>
+                        <h4 class="mb-0">Masukkan email yang sudah terdaftar</h4>
                     </div>
                     <div class="card-body">
                     
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Recover your password</button>
+                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Kirim</button>
                             </div>
                         </form>
                     </div>
