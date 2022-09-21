@@ -88,7 +88,7 @@
                             <label class="form-control-label">Nomor Telpon</label>
                             <input class="form-control" type="text" id="nomor_telp" value="+6285319105757">
                         </div>
-                        <a href="{{ url('department') }}" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end" type="button">+&nbsp; Tambah Karyawan</a>
+                        <a href="{{ url('karyawan') }}" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end" type="button">+&nbsp; Tambah Karyawan</a>
                     </form>
                 </div>
             </div>
