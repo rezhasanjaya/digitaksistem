@@ -6,11 +6,9 @@
     <div class="row">
         <div class="col-12">
             @if ($message = Session::get('success'))
-            <div class="alert alert-primary alert-success fade show" role="alert">
-                <span class="alert-text"><strong>{{ $message }}!</strong></span>
-                <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="alert alert-success fade show card mb-4 mx-4" role="alert">
+                <span class="alert-text"><strong>{{ $message }}!</strong>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></span>
             </div>
              @endif
             <div class="card mb-4 mx-4">

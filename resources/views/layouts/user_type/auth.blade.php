@@ -4,14 +4,14 @@
 
 
     @if(\Request::is('static-sign-up')) 
-        @include('layouts.navbars.guest.nav')
+        {{-- @include('layouts.navbars.guest.nav') --}}
         @yield('content')
-        @include('layouts.footers.guest.footer')
+        {{-- @include('layouts.footers.guest.footer') --}}
     
     @elseif (\Request::is('static-sign-in')) 
-        @include('layouts.navbars.guest.nav')
+        {{-- @include('layouts.navbars.guest.nav') --}}
             @yield('content')
-        @include('layouts.footers.guest.footer')
+        {{-- @include('layouts.footers.guest.footer') --}}
     
     @else
         @if (\Request::is('rtl'))  
@@ -52,6 +52,7 @@
             </main>
         @endif
 
+        @include('components.fixed-plugin')
     @endif
 
     

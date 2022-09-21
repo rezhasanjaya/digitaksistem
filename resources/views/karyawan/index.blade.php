@@ -5,6 +5,12 @@
 <div>
     <div class="row">
         <div class="col-12">
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success fade show card mb-4 mx-4" role="alert">
+                <span class="alert-text"><strong>{{ $message }}!</strong>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></span>
+            </div>
+             @endif
             <div class="card mb-4 mx-4">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
