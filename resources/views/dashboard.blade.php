@@ -1,7 +1,7 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-
+<div class="col-9">
   <div class="row">
     <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
@@ -13,7 +13,7 @@
                 <h5 class="font-weight-bolder mb-0">
                   13                  
                 </h5>
-                Total Data Karyawan
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
               </div>
             </div>
             <div class="col-4 text-end">
@@ -35,7 +35,7 @@
                 <h5 class="font-weight-bolder mb-0">
                   11
                 </h5>
-                Total Data Bagian
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
               </div>
             </div>
             <div class="col-4 text-end">
@@ -57,7 +57,7 @@
                 <h4 class="font-weight-bolder mb-0">
                   4
                 </h4>
-                Total Data ST / SP
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
               </div>
             </div>
             <div class="col-4 text-end">
@@ -68,7 +68,8 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
+</div>
 @endsection
 
