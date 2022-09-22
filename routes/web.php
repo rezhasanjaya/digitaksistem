@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\InfoUserController;
@@ -42,13 +42,15 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('profile', ["title" => "Profile"]);
 	})->name('profile');
 
-	Route::group(['prefix' => 'department'], function () {
-		Route::get('/', [DepartmentController::class, 'index']);
-		Route::get('/tambah', [DepartmentController::class, 'tambah']);
-		Route::get('/edit/{department:id}', [DepartmentController::class], 'edit');
-		Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
-		Route::resource('department', DepartmentController::class);
-	});
+	// Route::group(['prefix' => 'department'], function () {
+	// 	Route::get('/', [DepartmentController::class, 'index']);
+	// 	Route::get('/tambah', [DepartmentController::class, 'tambah']);
+	// 	Route::get('/edit/{department:id}', ['department' => 'DepartmentController@edit'])->name('edit');
+	// 	Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
+
+	// });
+	Route::get('/laporan', [LaporanController::class, 'index']);
+	Route::resource('department', DepartmentController::class);
 
 	Route::get('user-management', function () {
 		return view('laravel-examples/user-management', ["title" => "Account Management"]);
@@ -58,10 +60,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'karyawan'], function () {
 		Route::get('/', [KaryawanController::class, 'index']);
 		Route::get('/tambah', [KaryawanController::class, 'tambah']);
-		Route::get('/edit', [KaryawanController::class], 'edit');
+		//Route::get('/edit', [KaryawanController::class], 'edit');
+		Route::get('/edit/{karyawan:id}', ['karyawan' => 'KaryawanController@edit'])->name('edit');
 		Route::get('/destroy/{karyawan:id}', ['karyawan' => 'KaryawanController@destroy'])->name('destroy');
 		Route::resource('karyawan', KaryawanController::class);
 	});
+
+
 
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);

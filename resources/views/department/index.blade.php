@@ -18,7 +18,7 @@
                             <h5 class="mb-0">Data Department</h5>
                            
                         </div>
-                        <a href="{{ url('department/tambah') }}" class="btn bg-gradient-warning btn-sm mb-0" type="button">+&nbsp;Tambah Unit</a>
+                        <a href="{{ url('department/create') }}" class="btn bg-gradient-warning btn-sm mb-0" type="button">+&nbsp;Tambah Unit</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
