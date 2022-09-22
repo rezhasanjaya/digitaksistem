@@ -22,7 +22,7 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         ID
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-6 ">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-5">
                                         NIK
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -38,7 +38,7 @@
                                         Tanggal Pelanggaran
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Tanggal
+                                        Tanggal selesai
                                     </th>
                                 </tr>
                             </thead>
@@ -48,10 +48,56 @@
                                         <p class="text-xs font-weight-bold mb-0">1</p>
                                     </td>
                                     <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">2314901742191</span>
+                                        <span class="text-secondary text-xs font-weight-bold">2182121492</span>
                                     </td>
                                     <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">Barjo</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">02-03-2020</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Teguran</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">10-02-2020</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">02-06-2020</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">
+                                        <p class="text-xs font-weight-bold mb-0">2</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">21825221492</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Ah Meng</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">02-03-2020</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Teguran</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">10-02-2020</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">02-06-2020</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">
+                                        <p class="text-xs font-weight-bold mb-0">3</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">218242121492</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Bagogo</p>
                                     </td>
                                     <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">02-03-2020</p>
