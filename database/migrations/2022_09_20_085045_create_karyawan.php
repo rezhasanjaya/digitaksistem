@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('jabatan');
             $table->string('agama');
-            $table->boolean('status_kawin');
+            $table->string('status_kawin');
             $table->string('goldar');
             $table->string('telp');
             $table->timestamps();

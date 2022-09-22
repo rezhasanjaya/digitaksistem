@@ -4,6 +4,15 @@
 <div>
     <div class="row">
         <div class="col-12">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="card mb-4 mx-4">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
@@ -15,7 +24,7 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="/dashboard/karyawan" method="post">
+                    <form action="{{ route('karyawan.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="nik" class="form-control-label">NIK</label>
@@ -36,7 +45,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Unit / Department</label>
-                            <select class="form-control" id="unit_department">
+                            <select class="form-control" id="unit" name="unit">
                                 @foreach ($departments as $department)
                                 <option value="{{ $department->id }}">{{ $department->department }}</option> 
                                 @endforeach
@@ -86,14 +95,14 @@
                             <label class="form-control-label">Status Perkawinan</label>
                             <select class="form-control" id="status_kawin" name="status_kawin">
                                 <option selected>Pilih Status Perkawinan </option> 
-                                <option value="Menikah">Menikah</option>
                                 <option value="Belum Menikah">Belum Menikah</option>
+                                <option value="Menikah">Menikah</option>
                                 <option value="Cerai">Cerai</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Golongan Darah</label>
-                            <select class="form-control" id="gol_dar">
+                            <select class="form-control" id="goldar" name="goldar">
                                 <option selected>Pilih Golongan Darah </option> 
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>
@@ -103,14 +112,14 @@
                                 <option value="AB-">AB-</option>
                                 <option value="O+">O+</option>
                                 <option value="O-">O-</option>
-                                <option>C</option>
+                             
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Nomor Telpon</label>
-                            <input class="form-control" type="text" id="nomor_telp"  name="nomor_telp" >
+                            <input class="form-control" type="text" id="telp"  name="telp" >
                         </div>
-                        <a href="{{ url('karyawan') }}" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end" type="button">+&nbsp; Tambah Karyawan</a>
+                        <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Tambah</button>
                     </form>
                 </div>
             </div>

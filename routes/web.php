@@ -9,6 +9,7 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -44,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'department'], function () {
 		Route::get('/', [DepartmentController::class, 'index']);
 		Route::get('/tambah', [DepartmentController::class, 'tambah']);
-		Route::get('/edit', [DepartmentController::class], 'edit');
+		Route::get('/edit/{department:id}', [DepartmentController::class], 'edit');
 		Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
 		Route::resource('department', DepartmentController::class);
 	});
@@ -53,10 +54,13 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('laravel-examples/user-management', ["title" => "Account Management"]);
 	})->name('user-management');
 
+
 	Route::group(['prefix' => 'karyawan'], function () {
 		Route::get('/', [KaryawanController::class, 'index']);
 		Route::get('/tambah', [KaryawanController::class, 'tambah']);
-		Route::resource('/karyawan', KaryawanController::class);
+		Route::get('/edit', [KaryawanController::class], 'edit');
+		Route::get('/destroy/{karyawan:id}', ['karyawan' => 'KaryawanController@destroy'])->name('destroy');
+		Route::resource('karyawan', KaryawanController::class);
 	});
 
 

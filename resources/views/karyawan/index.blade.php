@@ -15,7 +15,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Data Department</h5>
+                            <h5 class="mb-0">Data Karyawan</h5>
                         </div>
                         <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Karyawan</a>
                     </div>
@@ -49,35 +49,37 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($karyawans as $karyawan)
                                 <tr>
                                     <td class="ps-4">
                                         <p class="text-xs font-weight-bold mb-0">1</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">20144818</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->nik }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Gundala</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->nama }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Staff</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->jabatan }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Jogjakarta, 12-06-1989</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->tempat_lahir }} , {{ $karyawan->tanggal_lahir }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">PLA / Plant and Maintenance</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->unit }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus Data">
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </a>
-                                        </span>
+                                        <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">
+                                            <a class="badge badge-pill bg-gradient-success mb-0" href="{{ route('karyawan.show',$karyawan->id) }}">Detail</a>
+                                            <a class="badge badge-pill bg-gradient-info mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}">Edit</a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure?')" class="badge badge-pill bg-gradient-danger mb-0">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
