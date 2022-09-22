@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="container-fluid py-4">
+  <div class="container-fluid py-3">
     <div class="row">
       <div class="col-lg-8">
         <div class="row">

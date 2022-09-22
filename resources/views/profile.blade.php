@@ -92,7 +92,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-3">
       <div class="row">
         <div class="col-12 col-xl-4">
           <div class="card h-100">
