@@ -18,7 +18,7 @@
             @include('layouts.navbars.auth.sidebar-rtl')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav-rtl')
-                <div class="container-fluid py-4">
+                <div class="container-fluid py-3">
                     @yield('content')
                     @include('layouts.footers.auth.footer')
                 </div>
@@ -45,7 +45,7 @@
             @include('layouts.navbars.auth.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg {{ (Request::is('rtl') ? 'overflow-hidden' : '') }}">
                 @include('layouts.navbars.auth.nav')
-                <div class="container-fluid py-4">
+                <div class="container-fluid py-3">
                     @yield('content')
                     @include('layouts.footers.auth.footer')
                 </div>

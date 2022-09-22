@@ -4,6 +4,7 @@
 <div>
     <div class="row">
         <div class="col-12">
+<<<<<<< HEAD
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -14,6 +15,9 @@
             </div>
             @endif
             <div class="card mb-4 mx-4">
+=======
+            <div class="card">
+>>>>>>> dbc59d977cb5da8c9cc2a9818455fcb07c066a2c
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
