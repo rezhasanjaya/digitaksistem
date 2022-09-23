@@ -25,7 +25,7 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         No
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -71,28 +71,11 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">
-
-                                            {{-- <a class="badge badge-pill bg-gradient-success mb-0" href="{{ route('karyawan.show',$karyawan->id) }}">Detail</a>
-                                            <a class="badge badge-pill bg-gradient-info mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}">Edit</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you sure?')" class="badge badge-pill bg-gradient-danger mb-0">Delete</button> --}}
-
-                                            {{-- <a href="{{ route('karyawan.show',$karyawan->id) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit unit">
-                                                <i class="fas fa-user-edit text-secondary"></i>
-                                            </a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you sure?')" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Hapus unit">
-                                                <i class="fas fa-trash text-secondary"></i>
-                                            </button> --}}
-
                                             <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
                                             <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
-
                                         </form>
                                     </td>
                                 </tr>

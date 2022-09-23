@@ -103,16 +103,16 @@
                   <p class="text-xs font-weight-bold mb-0">Dafa Sanjaya Dinata</p>
                 </td>
                 <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Kerja</p>
+                  <p class="text-xs font-weight-bold mb-0">Kontrak 1</p>
+                </td>
+                <td class="text-center">
+                  <p class="text-xs font-weight-bold mb-0">21/09/2021</p>
+                </td>
+                <td class="text-center">
+                  <p class="text-xs font-weight-bold mb-0">12 Bulan</p>
                 </td>
                 <td class="text-center">
                   <p class="text-xs font-weight-bold mb-0">21/09/2022</p>
-                </td>
-                <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">3 Bulan</p>
-                </td>
-                <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">21/12/2022</p>
                 </td>
               </tbody>
             </table>
