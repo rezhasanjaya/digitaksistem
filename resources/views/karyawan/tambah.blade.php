@@ -13,7 +13,7 @@
                 </ul>
             </div>
             @endif
-            <div class="card mb-4 mx-4">
+            <div class="card">
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
@@ -47,6 +47,7 @@
                         <div class="form-group">
                             <label class="form-control-label">Unit / Department</label>
                             <select class="form-control" id="unit" name="unit">
+                                <option selected>Pilih Bagian Unit </option>
                                 @foreach ($departments as $department)
                                 <option value="{{ $department->id }}">{{ $department->department }}</option> 
                                 @endforeach

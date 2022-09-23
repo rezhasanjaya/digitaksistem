@@ -5,13 +5,27 @@
 <div>
     <div class="row">
         <div class="col-12">
-            <div class="card mb-4 mx-4">
+            <div class="row">
+                <div class="col-sm-2">
+                <select name="perihal" class="default-select2 form-control">
+                    <option value="Teguran">Teguran</option>
+                    <option value="Peringatan I">Peringatan I</option>
+                    <option value="Peringatan II">Peringatan II</option>
+                    <option value="Peringatan III">Peringatan III</option>
+                    <option value="Skorsing">Skorsing</option>
+                </select>
+                </div>
+                <div class="col-sm">
+                <a href="#" class="btn bg-gradient-primary" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
+                </div>
+            </div>
+            <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">All Users</h5>
-                        </div>
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
+                            <h5 class="mb-0">Laporan Teguran</h5>
+                        </div>                        
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
