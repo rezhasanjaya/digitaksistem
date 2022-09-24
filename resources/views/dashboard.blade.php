@@ -103,16 +103,16 @@
                   <p class="text-xs font-weight-bold mb-0">Dafa Sanjaya Dinata</p>
                 </td>
                 <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Kerja</p>
+                  <p class="text-xs font-weight-bold mb-0">Kontrak 1</p>
+                </td>
+                <td class="text-center">
+                  <p class="text-xs font-weight-bold mb-0">21/09/2021</p>
+                </td>
+                <td class="text-center">
+                  <p class="text-xs font-weight-bold mb-0">12 Bulan</p>
                 </td>
                 <td class="text-center">
                   <p class="text-xs font-weight-bold mb-0">21/09/2022</p>
-                </td>
-                <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">3 Bulan</p>
-                </td>
-                <td class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">21/12/2022</p>
                 </td>
               </tbody>
             </table>
@@ -126,7 +126,7 @@
         <h5 class="mb-3">Statistik Unit / Department</h5>
         <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">          
           <div class="chart">            
-            <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+            <canvas id="chart-bars" class="chart-canvas" height="170px"></canvas>
           </div>
         </div>
       </div>
@@ -135,14 +135,12 @@
   </div>
 
   <div class="col-md-3">
-		<div class="card">
+		<div class="card mb-4">
       <div class="card-body p-3">
-        <div class="profile-container">
-          <h5 class="mb-3">Statistik Status Karyawan</h5>
-          <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">          
-            <div class="chart">            
-              <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-            </div>
+        <h5 class="mb-3">Statistik Status Karyawan</h5>
+        <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">          
+          <div class="chart">            
+            <canvas id="pie-chart" class="chart-canvas" height="170px"></canvas>
           </div>
         </div>
       </div>
@@ -155,7 +153,6 @@
   <script>
     window.onload = function() {
       var ctx = document.getElementById("chart-bars").getContext("2d");
-
       new Chart(ctx, {
         type: "bar",
         data: {
@@ -218,7 +215,30 @@
             },
           },
         },
-      });      
+      });    
+      
+      var ctx2 = document.getElementById("pie-chart").getContext("2d");
+      new Chart(ctx2, {
+        type: "pie",
+        data: {
+          labels: ["Tetap", "Kontrak"],
+          datasets: [{
+            label: " Total",
+            tension: 0.4,
+            borderWidth: 0,
+            borderRadius: 4,
+            borderSkipped: false,
+            backgroundColor: [
+              '#CEE5D0',
+              '#94B49F'
+            ],
+            data: [14, 12],
+            maxBarThickness: 10,
+            hoverOffset: 4
+          }, ],
+        },
+        
+      });
     }
   </script>
 @endpush

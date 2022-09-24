@@ -54,10 +54,10 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="{{ route('department.destroy',$dpr->id) }}" method="POST">
-                                            <a class="btn btn btn-outline-info  btn-sm mb-0" href="{{ route('department.edit',$dpr->id) }}">Edit</a>
+                                            <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('department.edit',$dpr->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn btn-outline-danger btn-sm mb-0">Delete</button>
+                                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-link text-danger text-gradient px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
                                         </form>
                                     </td>
                                 </tr>
