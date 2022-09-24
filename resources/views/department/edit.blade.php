@@ -24,17 +24,24 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('department.store') }}" method="POST">
+                    <form action="{{ route('department.update',$department->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="kode" class="form-control-label">Kode Unit</label>
-                            <input type="text" class="form-control" name="kode" id="kode">
+                            <input type="text" class="form-control" value="{{ $department->kode }}" name="kode" id="kode">
+                            @error('kode')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                             @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Nama Department</label>
-                            <input class="form-control" name="department" id="department" type="text">
+                            <input class="form-control" name="department" value="{{ $department->department }}" id="department" type="text">
+                            @error('department')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            @enderror
                         </div>
-                        <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Tambah</button>
+                        <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Edit</button>
                     </form>
                 </div>
             </div>
