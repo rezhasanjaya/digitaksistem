@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Tambah -->
 <div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -112,6 +112,70 @@
     </div>
   </div>
 </div>
-<!-- End Modal -->
+<!-- End Modal Tambah-->
+
+<!-- Modal Edit -->
+<div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Edit Unit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('department.store') }}" method="POST">
+          @csrf
+          <div class="form-group">
+            <label for="kode" class="form-control-label">Kode Unit</label>
+            <input type="text" class="form-control" name="kode" id="kode" required>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Nama Department</label>
+            <input class="form-control" name="department" id="department" type="text" required>
+          </div>   
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn bg-gradient-primary">Edit</button>
+          <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
+        </form>
+      </div>        
+    </div>
+  </div>
+</div>
+<!-- End Modal Edit-->
+
+<!-- Modal Hapus -->
+<div class="modal fade" id="Hapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Hapus Unit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('department.store') }}" method="POST">
+          @csrf
+          <div class="form-group">
+            <label for="kode" class="form-control-label">Kode Unit</label>
+            <input type="text" class="form-control" name="kode" id="kode" required>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Nama Department</label>
+            <input class="form-control" name="department" id="department" type="text" required>
+          </div>   
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn bg-gradient-primary">Hapus</button>
+          <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
+        </form>
+      </div>        
+    </div>
+  </div>
+</div>
+<!-- End Modal Hapus-->
 
 @endsection
