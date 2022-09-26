@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">Data Kontrak Kerja</h5>
                         </div>                        
-                        <a href="{{ url('karyawan/tambah') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Kontrak</a>
+                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Kontrak</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -69,7 +69,7 @@
                                       <a href="../../public/assets/file/Dijual-Kios.pdf" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-primary"><i class="fas fa-file">
                                   </td>
                                   <td class="text-center">
-                                    <a class="btn btn-link text-warning px-2 mb-0" data-bs-toggle="modal" data-bs-target="#Upload1"><i class="fas fa-upload text-warning me-2" aria-hidden="true"></i>Upload</a>
+                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                     <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
                                   </td>
                                 </tr>                                                                
@@ -83,28 +83,53 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="Upload1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Upload Dokumen Kontrak</h5>
+        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Tambah Kontrak Kerja</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form method="post" action="" role="form text-left">
-        <label>Pilih file</label>
-        <div class="input-group mb-3">
-        <input type="file" class="form-control" aria-label="File" aria-describedby="email-addon">
-        </div>
-        <label>* PDF. Max size 500 KB</label>   
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn bg-gradient-primary">Upload</button>
-        <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>                                        
-      </div>
-      </form>
+        <form action="" method="POST">
+          @csrf
+          <div class="form-group">
+            <label for="nama" class="form-control-label">Karyawan</label>
+              <select class="form-control" id="nama" name="nama">
+                  <option selected>Pilih Karyawan</option> 
+                  <option value="Laki - Laki">Dafa</option>
+                  <option value="Perempuan">Fahmi</option>        
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="status_kerja" class="form-control-label">Status</label>
+              <select class="form-control" id="status_kerja" name="status_kerja">
+                  <option selected>Pilih Status Kerja</option> 
+                  <option value="Laki - Laki">Tetap</option>
+                  <option value="Perempuan">kontrak 1</option>        
+                  <option value="Perempuan">Kontrak 2</option>        
+              </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Tanggal Mulai</label>
+            <input class="form-control" type="date" id="tanggal_mulai" name="tanggal_mulai" value="2022-01-01">
+          </div>   
+          <div class="form-group">
+            <label class="form-control-label">Lama Kontrak (Bulan)</label>
+            <input class="form-control" type="number" id="lama_kerja" name="lama_kerja">
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Upload File Kontrak</label>
+            <input class="form-control" type="file" id="dok_kontrak" name="dok_kontrak">
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn bg-gradient-primary">Tambah</button>
+          <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
+        </form>
+      </div>        
     </div>
   </div>
 </div>

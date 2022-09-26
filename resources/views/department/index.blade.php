@@ -63,14 +63,9 @@
                                     <td class="text-center">
                                         <span class="text-secondary text-xs font-weight-bold">{{ $dpr->department }}</span>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center">                                     
                                         <form action="{{ route('department.destroy',$dpr->kode) }}" method="POST">
-                                            <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('department.edit',$dpr->kode) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-link text-danger text-gradient px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
-                                        <form action="{{ route('department.destroy',$dpr->id) }}" method="POST">
-                                          <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('department.edit',$dpr->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                          <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('department.edit',$dpr->kode) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                           @csrf
                                           @method('DELETE')
                                           <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger text-gradient px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
