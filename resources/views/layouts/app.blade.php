@@ -87,14 +87,11 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-<<<<<<< HEAD
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-=======
   <!--<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>-->
   <script src="{{ asset('assets/js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
->>>>>>> be436a89a94cc6f5c2641fda733db728c909504c
 </body>
 
 </html>
