@@ -5,14 +5,14 @@
     <div class="row">
         <div class="col-12">
             @if ($errors->any())
-            <div class="alert alert-danger">
+              <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
                 </ul>
-            </div>
-        @endif
+              </div>
+            @endif
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">

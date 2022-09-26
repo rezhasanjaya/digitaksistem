@@ -68,18 +68,18 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $karyawan->jabatan }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->tempat_lahir }} , {{ $karyawan->tanggal_lahir }}</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $karyawan->tempat_lahir }}, {{ $karyawan->tanggal_lahir }}</p>
                                     </td>
                                     <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">{{ $karyawan->unit }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">
-                                            <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
+                                        <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">                                            
                                             <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
+                                            <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
+                                            <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
                                         </form>
                                     </td>
                                 </tr>
