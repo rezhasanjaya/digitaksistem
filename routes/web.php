@@ -29,7 +29,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::group(['middleware' => 'auth'], function () {
 
-	Route::get('/', [DashboardController::class, 'home']);
+	Route::get('/', [DashboardController::class, 'index']);
 	Route::get('dashboard', function () {
 		return view('dashboard', ["title" => "Dashboard"]);
 	})->name('dashboard');
@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// 	Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
 
 	// });
-	Route::get('/laporan', [LaporanController::class, 'index']);
+
 	Route::resource('department', DepartmentController::class);
 
 	Route::get('user-management', function () {
@@ -66,7 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::resource('karyawan', KaryawanController::class);
 	});
 
-
+	Route::get('/laporan', [LaporanController::class, 'index']);
 
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);
