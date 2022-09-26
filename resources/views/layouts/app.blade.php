@@ -90,8 +90,6 @@
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>-->
-  <script src="{{ asset('assets/js/soft-ui-dashboard.min.js?v=1.0.3')}}"></script>
 </body>
 
 </html>

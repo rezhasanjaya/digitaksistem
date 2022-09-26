@@ -63,7 +63,7 @@
                                     <td class="text-center">
                                         <span class="text-secondary text-xs font-weight-bold">{{ $dpr->department }}</span>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center">                                     
                                         <form action="{{ route('department.destroy',$dpr->kode) }}" method="POST">
                                           <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('department.edit',$dpr->kode) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                           @csrf
