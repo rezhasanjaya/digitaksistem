@@ -18,7 +18,7 @@
                     <div class="d-flex flex-row justify-content-between">
                        
                         <div>
-                            <h5 class="mb-0">Data Department</h5>
+                            <h5 class="mb-0">Edit Data Department</h5>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Data Department</h5>
+                            <h5 class="mb-0">Edit Data Karyawan</h5>
                         </div>
 
                     </div>
@@ -27,20 +27,28 @@
                     <hr>
                     <form action="{{ route('karyawan.store') }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="nik" class="form-control-label">NIK</label>
-                            <input class="form-control" type="text" name="nik" id="nik">
+                            <input class="form-control" type="text" name="nik" id="nik"  value="{{ $karyawan->nik }}">
+                            @error('nik')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="nama" class="form-control-label">Nama</label>
-                            <input class="form-control" type="text" name="nama" id="nama">
+                            <input class="form-control" type="text" name="nama" id="nama"  value="{{ $karyawan->nama }}">
+                            @error('nama')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="jenis_kelamin" class="form-control-label">Jenis Kelamin</label>
                             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                                 <option selected>Pilih Jenis Kelamin</option> 
                                 <option value="Laki - Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>        
+                                <option value="Perempuan">Perempuan</option>
+        
                             </select>
                         </div>
                         <div class="form-group">
@@ -55,19 +63,19 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Tanggal Masuk</label>
-                            <input class="form-control" type="date" id="tanggal_masuk" name="tanggal_masuk" value="2022-01-01">
+                            <input class="form-control" type="date" id="tanggal_masuk" name="tanggal_masuk"  value="{{ $karyawan->tanggal_masuk }}">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Alamat</label>
-                            <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+                            <textarea class="form-control" id="alamat" name="alamat" rows="3"> value="{{ $karyawan->alamat }}"</textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Tempat Lahir</label>
-                            <input class="form-control" type="text" id="tempat_lahir" name="tempat_lahir">
+                            <input class="form-control" type="text" id="tempat_lahir" name="tempat_lahir"  value="{{ $karyawan->tempat_lahir }}">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Tanggal Lahir</label>
-                            <input class="form-control" type="date" id="tanggal_lahir" name="tanggal_lahir" value="2022-01-01">
+                            <input class="form-control" type="date" id="tanggal_lahir" name="tanggal_lahir"  value="{{ $karyawan->tanggal_lahir }}">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Jabatan</label>
@@ -118,7 +126,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Nomor Telpon</label>
-                            <input class="form-control" type="text" id="telp"  name="telp" >
+                            <input class="form-control" type="text" id="telp"  name="telp"  value="{{ $karyawan->telp }}" >
                         </div>
                         <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Tambah</button>
                     </form>

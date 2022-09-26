@@ -5,9 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\SanksiController;
 use App\Http\Controllers\SessionsController;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
@@ -34,9 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard', ["title" => "Dashboard"]);
 	})->name('dashboard');
 
-	Route::get('billing', function () {
-		return view('billing', ["title" => "Kontrak Kerja"]);
-	})->name('billing');
+	Route::resource('kontrak', KontrakController::class);
+	Route::resource('sanksi', SanksiController::class);
 
 	Route::get('profile', function () {
 		return view('profile', ["title" => "Profile"]);
@@ -59,14 +60,16 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('user-management');
 
 
-	Route::group(['prefix' => 'karyawan'], function () {
-		Route::get('/', [KaryawanController::class, 'index']);
-		Route::get('/tambah', [KaryawanController::class, 'tambah']);
-		//Route::get('/edit', [KaryawanController::class], 'edit');
-		Route::get('/edit/{karyawan:id}', ['karyawan' => 'KaryawanController@edit'])->name('edit');
-		Route::get('/destroy/{karyawan:id}', ['karyawan' => 'KaryawanController@destroy'])->name('destroy');
-		Route::resource('karyawan', KaryawanController::class);
-	});
+	// Route::group(['prefix' => 'karyawan'], function () {
+	// 	Route::get('/', [KaryawanController::class, 'index']);
+	// 	Route::get('/tambah', [KaryawanController::class, 'tambah']);
+	// 	//Route::get('/edit', [KaryawanController::class], 'edit');
+	// 	Route::get('/edit/{karyawan:id}', ['karyawan' => 'KaryawanController@edit'])->name('edit');
+	// 	Route::get('/destroy/{karyawan:id}', ['karyawan' => 'KaryawanController@destroy'])->name('destroy');
+	// 	Route::resource('karyawan', KaryawanController::class);
+	// });
+
+	Route::resource('karyawan', KaryawanController::class);
 
 	Route::get('/laporan', [LaporanController::class, 'index']);
 
