@@ -45,9 +45,11 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::group(['prefix' => 'department'], function () {
 	// 	Route::get('/', [DepartmentController::class, 'index']);
 	// 	Route::get('/tambah', [DepartmentController::class, 'tambah']);
-	// 	Route::get('/edit/{department:id}', ['department' => 'DepartmentController@edit'])->name('edit');
-	// 	Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
-
+	// 	//Route::get('/edit/{department:id}', ['department' => 'DepartmentController@edit'])->name('edit');
+	// 	//Route::get('/destroy/{department:id}', ['department' => 'DepartmentController@destroy'])->name('destroy');
+	// 	Route::get('/edit/{department:kode}', [PostController::class, 'edit']);
+	// 	Route::get('/destroy/{department:kode}', [PostController::class, 'destroy']);
+	// 	Route::get('/update/{department:kode}', [PostController::class, 'update']);
 	// });
 
 	Route::resource('department', DepartmentController::class);

@@ -24,7 +24,7 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('department.update',$department->id) }}" method="POST">
+                    <form action="{{ route('department.update',$department->kode) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

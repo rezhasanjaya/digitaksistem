@@ -25,7 +25,7 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         No
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -38,7 +38,7 @@
                                         Jabatan
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        TTL
+                                        TTL(Year/Month/Day)
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Unit / Department
@@ -49,10 +49,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($karyawans as $karyawan)
+                                <?php 
+                                $i = 1;
+                               
+                                foreach ($karyawans as $karyawan) : ?>
+                               
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                     </td>
                                     <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">{{ $karyawan->nik }}</p>
@@ -79,7 +83,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                                @endforeach
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

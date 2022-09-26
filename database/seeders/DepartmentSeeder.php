@@ -18,21 +18,18 @@ class DepartmentSeeder extends Seeder
     {
         DB::table('department')->insert(
             [
-                'id' => '1',
                 'kode' => 'HRD',
                 'department' => 'Human Resources Development'
             ]
         );
         DB::table('department')->insert(
             [
-                'id' => '2',
                 'kode' => 'KEU',
                 'department' => 'Keuangan'
             ]
         );
         DB::table('department')->insert(
             [
-                'id' => '3',
                 'kode' => 'PRO',
                 'department' => 'Produksi'
             ],

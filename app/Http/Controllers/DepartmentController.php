@@ -12,6 +12,7 @@ class DepartmentController extends Controller
 {
     public function index()
     {
+
         $departments = Department::latest()->paginate(20);
         return view('department.index', ["title" => "Departmen/Unit"], compact('departments'));
     }
@@ -58,6 +59,7 @@ class DepartmentController extends Controller
         // $department->kode = $request->kode;
         // $department->department = $request->department;
         // $department->update();
+
         $department->update($request->all());
         return redirect()->route('department.index')
             ->with('sukses', 'Data Berhasil Diupdate');

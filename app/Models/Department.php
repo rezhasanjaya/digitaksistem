@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
+
     public $timestamps = false;
     public $table = "department";
     use HasFactory;
@@ -17,6 +18,12 @@ class Department extends Model
         'department',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'kode';
+    }
+
+    protected $primarykey = 'kode';
     protected $guarded = [
         'id',
     ];
