@@ -70,6 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// });
 
 	Route::resource('karyawan', KaryawanController::class);
+	Route::put('{kode}/edit', 'KaryawanController@update')->name('karyawan.update');
 
 	Route::get('/laporan', [LaporanController::class, 'index']);
 

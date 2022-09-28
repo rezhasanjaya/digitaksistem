@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('karyawan.store') }}" method="POST">
+                    <form action="{{ route('karyawan.store')->$kode }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
