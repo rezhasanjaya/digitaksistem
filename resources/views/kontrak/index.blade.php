@@ -95,22 +95,37 @@
       <div class="modal-body">
         <form action="" method="POST">
           @csrf
-          <div class="form-group">
-            <label for="nama" class="form-control-label">Karyawan</label>
+          <div class="row">
+            <div class="col-md-3"><label for="nama" class="form-control-label">Karyawan</label></div>
+            <div class="col-md-9 ms-auto">
               <select class="form-control" id="nama" name="nama">
-                  <option selected>Pilih Karyawan</option> 
-                  <option value="Laki - Laki">Dafa</option>
-                  <option value="Perempuan">Fahmi</option>        
+                <option selected>Pilih Karyawan</option> 
+                <option value="Laki - Laki">Dafa</option>
+                <option value="Perempuan">Fahmi</option>        
               </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="status_kerja" class="form-control-label">Status</label>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="status_kerja" class="form-control-label">Status</label>
+            </div>
+            <div class="col-md-9 ms-auto">
               <select class="form-control" id="status_kerja" name="status_kerja">
-                  <option selected>Pilih Status Kerja</option> 
-                  <option value="Laki - Laki">Tetap</option>
-                  <option value="Perempuan">kontrak 1</option>        
-                  <option value="Perempuan">Kontrak 2</option>        
+                <option selected>Pilih Status Kerja</option> 
+                <option value="Laki - Laki">Tetap</option>
+                <option value="Perempuan">kontrak 1</option>        
+                <option value="Perempuan">Kontrak 2</option>        
               </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <label class="form-control-label">Tanggal Mulai</label>
+            </div>
+            <div class="col-md-9 ms-auto">
+              <input class="form-control" type="date" id="tanggal_mulai" name="tanggal_mulai" value="2022-01-01">
+            </div>
           </div>
           <div class="form-group">
             <label class="form-control-label">Tanggal Mulai</label>
