@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('karyawan.store') }}" method="POST">
+                    <form action="{{ route('karyawan.store')->$kode }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -46,8 +46,8 @@
                             <label for="jenis_kelamin" class="form-control-label">Jenis Kelamin</label>
                             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                                 <option selected>Pilih Jenis Kelamin</option> 
-                                <option value="Laki - Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
+                                <option value="Laki - Laki" {{ $karyawan->jenis_kelamin == 'Laki - Laki'? 'selected': ''}} >Laki-Laki</option>
+                                <option value="Perempuan" {{ $karyawan->jenis_kelamin == 'Perempuan'? 'selected': ''}} >Perempuan</option>
         
                             </select>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Alamat</label>
-                            <textarea class="form-control" id="alamat" name="alamat" rows="3"> value="{{ $karyawan->alamat }}"</textarea>
+                            <textarea class="form-control" id="alamat" name="alamat" rows="3">{{ $karyawan->alamat }}</textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Tempat Lahir</label>
@@ -81,46 +81,46 @@
                             <label class="form-control-label">Jabatan</label>
                             <select class="form-control" id="jabatan" name="jabatan">  
                                 <option selected>Pilih Jabatan </option>       
-                                <option value="Manager">Manager</option>
-                                <option value="Leader">Leader</option>
-                                <option value="Supervisor">Supervisor</option>
-                                <option value="Operator">Operator</option>
-                                <option value="Staff">Staff</option>
+                                <option value="Manager" {{ $karyawan->jabatan == 'Manager'? 'selected': ''}}>Manager</option>
+                                <option value="Leader" {{ $karyawan->jabatan == 'Leader'? 'selected': ''}}>Leader</option>
+                                <option value="Supervisor" {{ $karyawan->jabatan == 'Supervisor'? 'selected': ''}}>Supervisor</option>
+                                <option value="Operator" {{ $karyawan->jabatan == 'Operator'? 'selected': ''}}>Operator</option>
+                                <option value="Staff" {{ $karyawan->jabatan == 'Staff'? 'selected': ''}}>Staff</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Agama</label>
                             <select class="form-control" id="agama" name="agama">
-                                <option selected>Pilih Agama</option> 
-                                <option value="Islam">Islam</option>
-                                <option value="Kristen">Kristen</option>
-                                <option value="Katolik">Katolik</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Budha">Budha</option>
-                                <option value="Konghucu">Konghucu</option>
+                                <option selected>Pilih Agama</option>
+                                <option value="Islam" {{ $karyawan->agama == 'Islam'? 'selected': ''}}>Islam</option>
+                                <option value="Kristen" {{ $karyawan->agama == 'Kristen'? 'selected': ''}}>Kristen</option>
+                                <option value="Katolik" {{ $karyawan->agama == 'Katolik'? 'selected': ''}}>Katolik</option>
+                                <option value="Hindu" {{ $karyawan->agama == 'Hindu'? 'selected': ''}}>Hindu</option>
+                                <option value="Budha" {{ $karyawan->agama == 'Budha'? 'selected': ''}}>Budha</option>
+                                <option value="Konghucu" {{ $karyawan->agama == 'Islam'? 'selected': ''}}>Konghucu</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Status Perkawinan</label>
                             <select class="form-control" id="status_kawin" name="status_kawin">
                                 <option selected>Pilih Status Perkawinan </option> 
-                                <option value="Belum Menikah">Belum Menikah</option>
-                                <option value="Menikah">Menikah</option>
-                                <option value="Cerai">Cerai</option>
+                                <option value="Belum Menikah" {{ $karyawan->status_kawin == 'Belum Menikah'? 'selected': ''}}>Belum Menikah</option>
+                                <option value="Menikah" {{ $karyawan->status_kawin == 'Menikah'? 'selected': ''}}>Menikah</option>
+                                <option value="Cerai" {{ $karyawan->status_kawin == 'Cerai'? 'selected': ''}}>Cerai</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Golongan Darah</label>
                             <select class="form-control" id="goldar" name="goldar">
                                 <option selected>Pilih Golongan Darah </option> 
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
+                                <option value="A+" {{ $karyawan->goldar == 'A+'? 'selected': ''}}>A+</option>
+                                <option value="A-" {{ $karyawan->goldar == 'A-'? 'selected': ''}}>A-</option>
+                                <option value="B+" {{ $karyawan->goldar == 'B+'? 'selected': ''}}>B+</option>
+                                <option value="B-" {{ $karyawan->goldar == 'B-'? 'selected': ''}}>B-</option>
+                                <option value="AB+" {{ $karyawan->goldar == 'AB+'? 'selected': ''}}>AB+</option>
+                                <option value="AB-" {{ $karyawan->goldar == 'AB-'? 'selected': ''}}>AB-</option>
+                                <option value="O+" {{ $karyawan->goldar == 'O+'? 'selected': ''}}>O+</option>
+                                <option value="O-" {{ $karyawan->goldar == 'O-'? 'selected': ''}}>O-</option>
                              
                             </select>
                         </div>
@@ -128,7 +128,7 @@
                             <label class="form-control-label">Nomor Telpon</label>
                             <input class="form-control" type="text" id="telp"  name="telp"  value="{{ $karyawan->telp }}" >
                         </div>
-                        <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Tambah</button>
+                        <button type="submit" class="btn bg-gradient-warning btn-sm mt-3 mb-4 float-end"> Simpan</button>
                     </form>
                 </div>
             </div>

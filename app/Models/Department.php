@@ -10,8 +10,14 @@ use Illuminate\Database\Eloquent\Model;
 class Department extends Model
 {
 
-    public $timestamps = false;
+    protected $primaryKey = "kode";
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     public $table = "department";
+    public $timestamps = false;
+
+
     use HasFactory;
     protected $fillable = [
         'kode',
@@ -20,11 +26,6 @@ class Department extends Model
 
     public function getRouteKeyName()
     {
-        return 'kode';
+        return "kode";
     }
-
-    protected $primarykey = 'kode';
-    protected $guarded = [
-        'id',
-    ];
 }

@@ -28,12 +28,13 @@ class KaryawanController extends Controller
     public function edit(Karyawan $karyawan)
     {
         Department::first()->kode;
-        return view('karyawan.edit', compact('karyawan'), ["title" => "Edit Data Karyawan"]);
+        return view('karyawan.edit', compact('karyawan'), ["title" => "Edit Data Karyawan", 'departments' => Department::all()]);
     }
 
     public function show(Karyawan $karyawan)
     {
-        return view('karyawan.show', compact('karyawans'));
+        Department::first()->kode;
+        return view('karyawan.show', compact('karyawans'),  ["title" => "Detail Data Karyawan", 'departments' => Department::all()]);
     }
 
     public function store(Request $request)
