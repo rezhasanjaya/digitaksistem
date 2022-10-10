@@ -19,24 +19,64 @@
                         </div>
                         
                     </div>
-                    <a href="{{ url('karyawan/create') }}" class="btn bg-gradient-primary btn-sm" type="button">Hapus</a>
-                    <a href="{{ url('karyawan/create') }}" class="btn bg-gradient-primary btn-sm" type="button">Edit</a>
+                    <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">Hapus</a>
+                    <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">Edit</a>
                 </div>
                 <div class="card-body pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-3">
                           <tbody>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                            <td class="text-xs font-weight-bold">dhk.asdp@indonesiaferry.co.id</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">NIK</th>
+                            <td class="text-xs font-weight-bold">312321321321</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
-                            <td class="text-xs font-weight-bold">asdp_ferry</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nama</th>
+                            <td class="text-xs font-weight-bold">Dafa Sanjaya Dinata</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Password</th>
-                            <td class="text-xs font-weight-bold"> ****** </td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jenis kelamin</th>
+                            <td class="text-xs font-weight-bold">Laki-laki</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Unit</th>
+                            <td class="text-xs font-weight-bold">HRD</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Tanggal Masuk</th>
+                            <td class="text-xs font-weight-bold">2022-10-10</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Alamat</th>
+                            <td class="text-xs font-weight-bold">Bandung</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Tempat Lahir</th>
+                            <td class="text-xs font-weight-bold">Bandung</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Tanggal Lahir</th>
+                            <td class="text-xs font-weight-bold">1995-10-10</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Jabatan</th>
+                            <td class="text-xs font-weight-bold">Manajer</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Agama</th>
+                            <td class="text-xs font-weight-bold">Islam</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status Kawin</th>
+                            <td class="text-xs font-weight-bold">Belum Menikah</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Golongan Darah</th>
+                            <td class="text-xs font-weight-bold">B-</td>
+                            </tr>
+                            <tr>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No Telepon</th>
+                            <td class="text-xs font-weight-bold">08123456789</td>
                             </tr>
                             <tr></tr>
                         </tbody>
