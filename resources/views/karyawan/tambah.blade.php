@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="jenis_kelamin" class="form-control-label">Jenis Kelamin</label>
-                            <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                            <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" data-live-search="true">
                                 <option selected>Pilih Jenis Kelamin</option> 
                                 <option value="Laki - Laki"
                                     {{ old('jenis_kelamin') == 'Laki - Laki' ? 'selected=selected' : '' }}>Laki - Laki
@@ -47,6 +47,7 @@
                                 </option>      
                             </select>
                         </div>
+
                         <div class="form-group">
                             <label class="form-control-label">Unit / Department</label>
                             <select class="form-control" id="unit" name="unit">
