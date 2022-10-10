@@ -95,8 +95,8 @@
       <div class="modal-body">
         <form action="" method="POST">
           @csrf
-          <div class="row">
-            <div class="col-md-3"><label for="nama" class="form-control-label">Karyawan</label></div>
+          <div class="row mt-1">
+            <div class="col-md-3 mt-2"><label for="nama" class="form-control-label">Karyawan</label></div>
             <div class="col-md-9 ms-auto">
               <select class="form-control" id="nama" name="nama">
                 <option selected>Pilih Karyawan</option> 
@@ -105,37 +105,38 @@
               </select>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row mt-3">
+            <div class="col-md-3 mt-2">
               <label for="status_kerja" class="form-control-label">Status</label>
             </div>
             <div class="col-md-9 ms-auto">
               <select class="form-control" id="status_kerja" name="status_kerja">
                 <option selected>Pilih Status Kerja</option> 
-                <option value="Laki - Laki">Tetap</option>
-                <option value="Perempuan">kontrak 1</option>        
-                <option value="Perempuan">Kontrak 2</option>        
+                <option value="Tetap">Tetap</option>
+                <option value="Kontrak">Kontrak</option>        
+                <option value="Magang">Magang</option>        
               </select>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row mt-3">
+            <div class="col-md-3 mt-2">
               <label class="form-control-label">Tanggal Mulai</label>
             </div>
             <div class="col-md-9 ms-auto">
               <input class="form-control" type="date" id="tanggal_mulai" name="tanggal_mulai" value="2022-01-01">
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-control-label">Tanggal Mulai</label>
-            <input class="form-control" type="date" id="tanggal_mulai" name="tanggal_mulai" value="2022-01-01">
-          </div>   
-          <div class="form-group">
-            <label class="form-control-label">Lama Kontrak (Bulan)</label>
-            <input class="form-control" type="number" id="lama_kerja" name="lama_kerja">
+
+          <div class="row mt-3">
+            <div class="col-md-3 mt-1">
+              <label class="form-control-label">Lama Kontrak (Bulan)</label>
+            </div>
+            <div class="col-md-9 ms-auto">
+              <input class="form-control" type="number" id="lama_kerja" name="lama_kerja" value="0">
+            </div>
           </div>
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label class="form-control-label">Upload File Kontrak</label>
             <input class="form-control" type="file" id="dok_kontrak" name="dok_kontrak">
           </div>

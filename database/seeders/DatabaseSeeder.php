@@ -10,37 +10,38 @@ use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-      User::create([
-        'name' => 'admin',
-        'email' => 'admin@gmail.com',
-        'password' => Hash::make('Digitak123*'),
-        'role' => 1,
-        'remember_token' => Str::random(10),
-        'email_verified_at' => now()
-      ]);
+  /**
+   * Seed the application's database.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    User::create([
+      'username' => 'mainadmin',
+      'name' => 'admin',
+      'email' => 'admin@gmail.com',
+      'password' => Hash::make('Digitak123*'),
+      'role' => 1,
+      'remember_token' => Str::random(10),
 
-      User::factory(3)->create();
+    ]);
 
-      Department::create([
-        'kode' => 'HRD',
-        'department' => 'Human Resources Development'
-      ]);
+    User::factory(3)->create();
 
-      Department::create([
-        'kode' => 'KEU',
-        'department' => 'Keuangan'
-      ]);
+    Department::create([
+      'kode' => 'HRD',
+      'department' => 'Human Resources Development'
+    ]);
 
-      Department::create([
-        'kode' => 'PRO',
-        'department' => 'Produksi'
-      ]);
-    }
+    Department::create([
+      'kode' => 'KEU',
+      'department' => 'Keuangan'
+    ]);
+
+    Department::create([
+      'kode' => 'PRO',
+      'department' => 'Produksi'
+    ]);
+  }
 }
