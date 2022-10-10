@@ -95,13 +95,19 @@
       <div class="modal-body">
         <form action="" method="POST">
           @csrf
+          
           <div class="row mt-1">
             <div class="col-md-3 mt-2"><label for="nama" class="form-control-label">Karyawan</label></div>
             <div class="col-md-9 ms-auto">
               <select class="form-control" id="nama" name="nama">
-                <option selected>Pilih Karyawan</option> 
-                <option value="Laki - Laki">Dafa</option>
-                <option value="Perempuan">Fahmi</option>        
+                <option selected>Pilih Karyawan</option>
+                @foreach ($karyawan as $kyw)
+                @if(old ('nama')== $kyw->id)
+                <option value="{{ $kyw->id }}" selected>{{ $kyw->nama }}</option> 
+                @else
+                <option value="{{ $kyw->id }}">{{ $kyw->nama }}</option> 
+                @endif 
+                @endforeach       
               </select>
             </div>
           </div>

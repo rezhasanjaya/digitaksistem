@@ -11,6 +11,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SanksiController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\UserController;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -55,9 +56,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('department', DepartmentController::class);
 
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management', ["title" => "Account Management"]);
-	})->name('user-management');
+	Route::get('user-management', [UserController::class, 'index']);
+
+	// Route::get('user-management', function () {
+	// 	return view('laravel-examples/user-management', ["title" => "Account Management"]);
+	// })->name('user-management');
 
 
 	// Route::group(['prefix' => 'karyawan'], function () {

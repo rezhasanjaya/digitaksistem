@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use App\Models\Kontrak;
 
@@ -11,7 +12,10 @@ class KontrakController extends Controller
     {
 
         //$kontraks = Kontrak::latest()->paginate(20);
-        return view('kontrak.index', ["title" => "Kontrak Kerja"]);
+        return view('kontrak.index', [
+            "title" => "Kontrak Kerja",
+            'karyawan' => Karyawan::all()
+        ]);
     }
 
     public function show()
@@ -24,21 +28,24 @@ class KontrakController extends Controller
         return view('kontrak.tambah', ["title" => "Tambah Kontrak"]);
     }
 
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'kode'  => 'required|unique:department|min:1|max:3',
-    //         'department' => 'required',
-    //     ]);
-    //     $department = new Department;
-    //     $department->kode = $request->kode;
-    //     $department->department = $request->department;
-    //     $department->save();
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode'  => 'required|unique:department|min:1|max:3',
+            'department' => 'required',
+        ]);
+        $kontrak = new Kontrak;
+        $kontrak->karyawan_id = $request->karyawan_id;
+        $kontrak->status = $request->status;
+        $kontrak->tgl_mulai = $request->tgl_mulai;
+        $kontrak->durasi_kontrak = $request->durasi_kontrak;
+        $kontrak->dokumen = $request->dokumen;
+        $kontrak->save();
 
-    //     // $department->create(array_merge($request->validated()));
-    //     return redirect()->route('department.index')
-    //         ->with('success', 'Tambah Unit Berhasil.');
-    // }
+        // $department->create(array_merge($request->validated()));
+        return redirect()->route('kontrak.index')
+            ->with('success', 'Tambah Kontrak Berhasil.');
+    }
 
     public function edit(Kontrak $kontrak)
     {
