@@ -25,7 +25,8 @@
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
                     <hr>
-                    <form action="{{ route('karyawan.store')->$kode }}" method="POST">
+    
+                    <form action="{{ route('karyawan.update',$karyawan->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -51,12 +52,19 @@
         
                             </select>
                         </div>
+
+           
+
                         <div class="form-group">
                             <label class="form-control-label">Unit / Department</label>
                             <select class="form-control" id="unit" name="unit">
                                 <option selected>Pilih Bagian Unit </option>
                                 @foreach ($departments as $department)
+                                <?php if ($department->kode == $karyawan['unit']) : ?>
+                                <option value="{{ $department->kode }}" selected>{{ $department->department }}</option> 
+                                <?php else : ?>
                                 <option value="{{ $department->kode }}">{{ $department->department }}</option> 
+                                <?php endif; ?>
                                 @endforeach
                                
                             </select>
@@ -97,7 +105,7 @@
                                 <option value="Katolik" {{ $karyawan->agama == 'Katolik'? 'selected': ''}}>Katolik</option>
                                 <option value="Hindu" {{ $karyawan->agama == 'Hindu'? 'selected': ''}}>Hindu</option>
                                 <option value="Budha" {{ $karyawan->agama == 'Budha'? 'selected': ''}}>Budha</option>
-                                <option value="Konghucu" {{ $karyawan->agama == 'Islam'? 'selected': ''}}>Konghucu</option>
+                                <option value="Konghucu" {{ $karyawan->agama == 'Konghucu'? 'selected': ''}}>Konghucu</option>
                             </select>
                         </div>
                         <div class="form-group">
