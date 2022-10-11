@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">Data Kontrak Kerja</h5>
                         </div>                        
-                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah Kontrak</a>
+                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button">+&nbsp; Tambah Kontrak</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -158,7 +158,7 @@
           </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-primary">Tambah</button>
+            <button type="submit" class="btn bg-gradient-warning">Tambah</button>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
         </form>
       </div>        

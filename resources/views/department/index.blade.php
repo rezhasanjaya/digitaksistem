@@ -105,7 +105,7 @@
           </div>   
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-primary">Tambah</button>
+            <button type="submit" class="btn bg-gradient-warning">Tambah</button>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
         </form>
       </div>        
@@ -137,7 +137,7 @@
           </div>   
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-primary">Edit</button>
+            <button type="submit" class="btn bg-gradient-warning">Edit</button>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
         </form>
       </div>        
@@ -169,7 +169,7 @@
           </div>   
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-primary">Hapus</button>
+            <button type="submit" class="btn bg-gradient-warning">Hapus</button>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
         </form>
       </div>        

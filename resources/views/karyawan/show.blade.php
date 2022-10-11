@@ -19,8 +19,8 @@
                         </div>
                         
                     </div>
-                    <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">Hapus</a>
-                    <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">Edit</a>
+                    <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button">Hapus</a>
+                    <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button">Edit</a>
                 </div>
                 <div class="card-body pb-2">
                     <div class="table-responsive p-0">

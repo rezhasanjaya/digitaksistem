@@ -16,7 +16,7 @@
                 </select>
                 </div>
                 <div class="col-sm">
-                <a href="#" class="btn bg-gradient-primary" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
+                <a href="#" class="btn bg-gradient-warning" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
                 </div>
             </div>
             <div class="card">
@@ -25,7 +25,7 @@
                         <div>
                             <h5 class="mb-0">Laporan Teguran</h5>
                         </div>                        
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
+                        <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">

@@ -22,7 +22,7 @@
                     <span class="d-sm-inline d-none">Sign Out</span>
                 </a>
             </li>
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+            <li class="nav-item d-xl-none px-3 d-flex align-items-center">
                 <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
                     <i class="sidenav-toggler-line"></i>
@@ -31,12 +31,7 @@
                 </div>
                 </a>
             </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-                <a href="javascript:;" class="nav-link text-body p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+            <li class="nav-item dropdown px-2 d-flex align-items-center">
                 <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
                 </a>

@@ -41,7 +41,7 @@
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn bg-gradient-primary btn-sm mt-3 mb-4 float-end">+&nbsp; Edit</button>
+                        <button type="submit" class="btn bg-gradient-warning btn-sm mt-3 mb-4 float-end">+&nbsp; Edit</button>
                     </form>
                     <a class="btn bg-gradient-secondary btn-sm mt-3 mb-4" href="{{ route('department.index') }}">Batal</a>
                 </div>
