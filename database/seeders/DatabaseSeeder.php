@@ -46,8 +46,8 @@ class DatabaseSeeder extends Seeder
     ]);
 
     Karyawan::create([
-      'nik' => '312321321321',
-      'nama' => 'Dafa Sanjaya Dinata',
+      'nik' => '10119253',
+      'nama' => 'Mochamad Adi Maulia Rachman',
       'jenis_kelamin' => 'Laki - Laki',
       'unit' => 'HRD',
       'tanggal_masuk' => '2022-10-10',
@@ -62,8 +62,8 @@ class DatabaseSeeder extends Seeder
     ]);
 
     Karyawan::create([
-      'nik' => '312321321322',
-      'nama' => 'Rezha Chiesa Fikri',
+      'nik' => '10119281',
+      'nama' => 'Rezha Satria Sanjaya Putra',
       'jenis_kelamin' => 'Laki - Laki',
       'unit' => 'HRD',
       'tanggal_masuk' => '2022-10-11',
