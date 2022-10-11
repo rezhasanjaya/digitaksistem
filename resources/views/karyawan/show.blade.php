@@ -19,8 +19,12 @@
                         </div>
                         
                     </div>
-                    <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button">Hapus</a>
-                    <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button">Edit</a>
+                    <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">                                                
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn bg-gradient-danger btn-sm mb-0">Delete</button>
+                        <a href="{{ route('karyawan.edit',$karyawan->id) }}" class="btn bg-gradient-secondary  btn-sm mb-0" type="button">Edit</a>
+                    </form>   
                 </div>
                 <div class="card-body pb-2">
                     <div class="table-responsive p-0">
