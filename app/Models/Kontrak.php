@@ -10,6 +10,7 @@ class Kontrak extends Model
     use HasFactory;
     public $table = "kontrak";
     public $timestamps = false;
+    protected $dates = ['tgl_selesai'];
 
     protected $fillable = [
         'karyawan_id',

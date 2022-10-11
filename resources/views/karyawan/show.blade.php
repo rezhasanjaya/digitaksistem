@@ -27,56 +27,56 @@
                         <table class="table align-items-center mb-3">
                           <tbody>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">NIK</th>
-                            <td class="text-xs font-weight-bold">312321321321</td>
+                            <th style="width:450px" class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">NIK</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->nik }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Nama</th>
-                            <td class="text-xs font-weight-bold">Dafa Sanjaya Dinata</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Nama</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->nama }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Jenis kelamin</th>
-                            <td class="text-xs font-weight-bold">Laki-laki</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Jenis kelamin</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->jenis_kelamin }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Unit</th>
-                            <td class="text-xs font-weight-bold">HRD</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Unit</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->unit }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Tanggal Masuk</th>
-                            <td class="text-xs font-weight-bold">2022-10-10</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Tanggal Masuk</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->nik }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Alamat</th>
-                            <td class="text-xs font-weight-bold">Bandung</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Alamat</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->alamat }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Tempat Lahir</th>
-                            <td class="text-xs font-weight-bold">Bandung</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Tempat Lahir</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->tempat_lahir }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Tanggal Lahir</th>
-                            <td class="text-xs font-weight-bold">1995-10-10</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Tanggal Lahir</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->tanggal_lahir }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Jabatan</th>
-                            <td class="text-xs font-weight-bold">Manajer</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Jabatan</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->jabatan }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Agama</th>
-                            <td class="text-xs font-weight-bold">Islam</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Agama</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->agama }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Status Kawin</th>
-                            <td class="text-xs font-weight-bold">Belum Menikah</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Status Kawin</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->status_kawin }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">Golongan Darah</th>
-                            <td class="text-xs font-weight-bold">B-</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Golongan Darah</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->goldar }}</td>
                             </tr>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xs font-weight-bolder">No Telepon</th>
-                            <td class="text-xs font-weight-bold">08123456789</td>
+                            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">No Telepon</th>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->telp }}</td>
                             </tr>
                             <tr></tr>
                         </tbody>

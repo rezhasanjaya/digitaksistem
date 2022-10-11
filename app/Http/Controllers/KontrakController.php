@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kontrak;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
-use App\Models\Kontrak;
+use Illuminate\Support\Carbon;
 
 class KontrakController extends Controller
 {
     public function index()
     {
-
+        $data = Kontrak::join("karyawan", function ($join) {
+            $join->on("karyawan.id", "=", "kontrak.karyawan_id");
+        })->get();
         //$kontraks = Kontrak::latest()->paginate(20);
         return view('kontrak.index', [
             "title" => "Kontrak Kerja",
-            'karyawan' => Karyawan::all()
+            'karyawan' => Karyawan::all(),
+            'kontrak' => Kontrak::all(),
+            'data' => $data,
         ]);
     }
 
@@ -31,8 +36,10 @@ class KontrakController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode'  => 'required|unique:department|min:1|max:3',
-            'department' => 'required',
+            'karyawan_id'  => 'required',
+            'status' => 'required',
+            'tgl_mulai' => 'required',
+            'durasi_kontrak' => 'required|numeric',
         ]);
         $kontrak = new Kontrak;
         $kontrak->karyawan_id = $request->karyawan_id;
@@ -40,9 +47,9 @@ class KontrakController extends Controller
         $kontrak->tgl_mulai = $request->tgl_mulai;
         $kontrak->durasi_kontrak = $request->durasi_kontrak;
         $kontrak->dokumen = $request->dokumen;
+        $perhitunganAkhirKontrak = (new Carbon($request->tgl_mulai))->addMonths($request->durasi_kontrak);
+        $kontrak->tgl_selesai = $perhitunganAkhirKontrak;
         $kontrak->save();
-
-        // $department->create(array_merge($request->validated()));
         return redirect()->route('kontrak.index')
             ->with('success', 'Tambah Kontrak Berhasil.');
     }
