@@ -35,6 +35,7 @@ class KaryawanController extends Controller
     {
         Department::first()->kode;
         return view('karyawan.show', compact('karyawan'),  ["title" => "Detail Data Karyawan", 'departments' => Department::all()]);
+        $karyawan = Karyawan::all();
     }
 
     public function store(Request $request)

@@ -19,7 +19,7 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         no
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -46,24 +46,28 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              <?php 
+                              $i = 1;
+                             
+                              foreach ($data as $kontrak) : ?>
                                 <tr>
                                   <td class="ps-4">
-                                      <p class="text-xs font-weight-bold mb-0">1</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                   </td>
                                   <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">Dafa Sanjaya Dinata</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->nama }}</p>
                                   </td>
                                   <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">Kontrak 1</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->status }}</p>
                                   </td>
                                   <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">21/09/2021</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->tgl_mulai }}</p>
                                   </td>
                                   <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">12 Bulan</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->durasi_kontrak }} Bulan</p>
                                   </td>
                                   <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">21/09/2022</p>
+                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->tgl_selesai->toDateString() }}</p>
                                   </td>
                                   <td class="text-center">
                                       <a href="../../public/assets/file/Dijual-Kios.pdf" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-primary"><i class="fas fa-file">
@@ -72,7 +76,8 @@
                                     <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                                     <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
                                   </td>
-                                </tr>                                                                
+                                </tr>   
+                                <?php endforeach; ?>                                                             
                             </tbody>
                         </table>
                     </div>
@@ -93,16 +98,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST">
+        <form action="{{ route('kontrak.store') }}" method="POST">
           @csrf
-          
           <div class="row mt-1">
-            <div class="col-md-3 mt-2"><label for="nama" class="form-control-label">Karyawan</label></div>
+            <div class="col-md-3 mt-2"><label for="karyawan_id" class="form-control-label">Karyawan</label></div>
             <div class="col-md-9 ms-auto">
-              <select class="form-control" id="nama" name="nama">
+              <select class="form-control" id="karyawan_id" name="karyawan_id">
                 <option selected>Pilih Karyawan</option>
                 @foreach ($karyawan as $kyw)
-                @if(old ('nama')== $kyw->id)
+                @if(old ('karyawan_id')== $kyw->id)
                 <option value="{{ $kyw->id }}" selected>{{ $kyw->nama }}</option> 
                 @else
                 <option value="{{ $kyw->id }}">{{ $kyw->nama }}</option> 
@@ -113,14 +117,20 @@
           </div>
           <div class="row mt-3">
             <div class="col-md-3 mt-2">
-              <label for="status_kerja" class="form-control-label">Status</label>
+              <label for="status" class="form-control-label">Status</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <select class="form-control" id="status_kerja" name="status_kerja">
-                <option selected>Pilih Status Kerja</option> 
-                <option value="Tetap">Tetap</option>
-                <option value="Kontrak">Kontrak</option>        
-                <option value="Magang">Magang</option>        
+              <select class="form-control" id="status" name="status">
+                <option selected>Pilih Status Kerja</option>
+                <option value="Tetap"
+                  {{ old('status') == 'Tetap' ? 'selected=selected' : '' }}>Tetap
+                </option>
+                <option value="Kontrak"
+                  {{ old('status') == 'Kontrak' ? 'selected=selected' : '' }}>Kontrak
+                </option>
+                <option value="Magang"
+                  {{ old('status') == 'Magang' ? 'selected=selected' : '' }}>Magang
+                </option>      
               </select>
             </div>
           </div>
@@ -130,7 +140,7 @@
               <label class="form-control-label">Tanggal Mulai</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="date" id="tanggal_mulai" name="tanggal_mulai" value="2022-01-01">
+              <input class="form-control" type="date" id="tgl_mulai" name="tgl_mulai" value="{{ old('tgl_mulai') }}">
             </div>
           </div>
 
@@ -139,12 +149,12 @@
               <label class="form-control-label">Lama Kontrak (Bulan)</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="number" id="lama_kerja" name="lama_kerja" value="0">
+              <input class="form-control" type="number" id="durasi_kontrak" name="durasi_kontrak" value="{{ old('durasi_kontrak') }}">
             </div>
           </div>
           <div class="form-group mt-3">
             <label class="form-control-label">Upload File Kontrak</label>
-            <input class="form-control" type="file" id="dok_kontrak" name="dok_kontrak">
+            <input class="form-control" type="file" id="dokumen" name="dokumen">
           </div>
           </div>
           <div class="modal-footer">
