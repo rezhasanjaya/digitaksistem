@@ -70,7 +70,7 @@
                                       <p class="text-xs font-weight-bold mb-0">{{ $kontrak->tgl_selesai->toDateString() }}</p>
                                   </td>
                                   <td class="text-center">
-                                      <a href="../../public/assets/file/Dijual-Kios.pdf" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-primary"><i class="fas fa-file">
+                                      <a href="{{ url('/assets/file/Dijual-Kios.pdf') }}" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-primary"><i class="fas fa-file">
                                   </td>
                                   <td class="text-center">
                                     <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>

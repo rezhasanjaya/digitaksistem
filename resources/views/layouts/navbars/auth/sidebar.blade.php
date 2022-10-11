@@ -6,6 +6,7 @@
         <span class="ms-3 font-weight-bold">Digitak System</span>
     </a>
   </div>
+  
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard')}}">
@@ -16,8 +17,7 @@
           </div>
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
-      </li>
-      
+      </li>      
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'user-profile' ? 'active' : '' }} " href="{{ url('user-profile') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
