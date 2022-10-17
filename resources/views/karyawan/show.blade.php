@@ -13,17 +13,16 @@
              @endif
             <div class="card">
                 <div class="card-header pb-0">
-                    <div class="d-flex flex-row justify-content-between mb-3">
+                    <div class="d-flex flex-row justify-content-between mb-2">
                         <div>
                             <h5 class="mb-0">Detail Karyawan</h5>
-                        </div>
-                        
+                        </div>                       
                     </div>
                     <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">                                                
                         @csrf
                         @method('DELETE')
-                        <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn bg-gradient-danger btn-sm mb-0">Delete</button>
-                        <a href="{{ route('karyawan.edit',$karyawan->id) }}" class="btn bg-gradient-secondary  btn-sm mb-0" type="button">Edit</a>
+                        <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="badge bg-gradient-danger border-0 mb-0">Delete</button>
+                        <a href="{{ route('karyawan.edit',$karyawan->id) }}" class="badge bg-gradient-warning border-0 mb-0" type="button">Edit</a>
                     </form>   
                 </div>
                 <div class="card-body pb-2">

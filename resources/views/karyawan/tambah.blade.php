@@ -18,9 +18,8 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Data Karyawan</h5>
+                            <h5 class="mb-0">Tambah Karyawan</h5>
                         </div>
-
                     </div>
                 </div>
                 <div class="card-body px-4 pt-0 pb-2">
