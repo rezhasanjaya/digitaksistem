@@ -1,5 +1,5 @@
 
-@extends('layouts.user_type.auth')
+@extends('layouts.main')
 
 @section('content')
   <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
@@ -380,7 +380,7 @@
           </div>
         </div>
       </div>
-      @include('layouts.footers.auth.footer')
+      @include('layouts.footers.footer')
     </div>
   </div>
 
