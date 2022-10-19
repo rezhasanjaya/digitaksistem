@@ -40,13 +40,9 @@
   <link id="pagestyle" rel="stylesheet" href="{{ url('/assets/css/soft-ui-dashboard.css?v=1.0.3') }}" />
 </head>
 
-<body class="g-sidenav-show  bg-gray-100 {{ (\Request::is('rtl') ? 'rtl' : (Request::is('virtual-reality') ? 'virtual-reality' : '')) }} ">
   @auth
     @yield('auth')
   @endauth
-  @guest
-    @yield('guest')
-  @endguest
 
   {{-- @if(session()->has('success'))
     <div x-data="{ show: true}"
@@ -72,7 +68,6 @@
   <script src="../assets/js/plugins/fullcalendar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   -->
-  @stack('rtl')
   @stack('dashboard')
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
