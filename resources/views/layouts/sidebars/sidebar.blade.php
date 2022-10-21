@@ -2,11 +2,11 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="align-items-center d-flex m-0 navbar-brand text-wrap">
-        <img src="{{ url('/assets/img/logo-ct.png') }}" class="navbar-brand-img h-100" alt="...">
-        <span class="ms-3 font-weight-bold">Digitak System</span>
+      <img src="{{ url('/assets/img/logo-ct.png') }}" class="navbar-brand-img h-100" alt="...">
+      <span class="ms-3 font-weight-bold">Digitak System</span>
     </a>
   </div>
-  
+
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard')}}">
@@ -17,7 +17,8 @@
           </div>
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
-      </li>      
+      </li> 
+
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'user-profile' ? 'active' : '' }} " href="{{ url('user-profile') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -28,6 +29,8 @@
             <span class="nav-link-text ms-1">User Profile</span>
         </a>
       </li>
+
+      @can('admin')
       <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Admin</h6>
       </li>
@@ -41,6 +44,7 @@
             <span class="nav-link-text ms-1">Unit / Department</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'user-management' ? 'active' : '' }}" href="{{ url('user-management')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -51,6 +55,8 @@
             <span class="nav-link-text ms-1">User Management</span>
         </a>
       </li>
+      @endcan
+
       <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Human Resource Department</h6>
       </li>
@@ -62,6 +68,7 @@
           <span class="nav-link-text ms-1">Data Karyawan</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'kontrak' ? 'active' : '' }}" href="{{ url('kontrak') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -70,6 +77,7 @@
           <span class="nav-link-text ms-1">Kontrak Kerja</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'sanksi' ? 'active' : '' }}" href="{{ url('sanksi') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -78,6 +86,7 @@
           <span class="nav-link-text ms-1">Sanksi</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link {{ request ()->segment(1) == 'laporan' ? 'active' : '' }}" href="{{ url('laporan') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -86,5 +95,7 @@
           <span class="nav-link-text ms-1">Laporan</span>
         </a>
       </li>
+
+
     </ul>
 </aside>
