@@ -6,7 +6,7 @@
                   © <script>
                       document.write(new Date().getFullYear())
                   </script>, made with <i class="fa fa-heart"></i> by
-                  <a href="#" class="font-weight-bold" target="_blank">Digitak Team</a>
+                  <a href="https://www.digitak.id/" class="font-weight-bold" target="_blank">Digitak Team</a>
               </div>
           </div>        
       </div>

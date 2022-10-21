@@ -13,7 +13,7 @@
                 <div>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">KARYAWAN</p>
                   <h5 class="font-weight-bolder mb-0">
-                    13                  
+                    {{ DB::table('karyawan')->count() }}                  
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">UNIT / BAGIAN</p>
                   <h5 class="font-weight-bolder mb-0">
-                    11
+                    {{ DB::table('department')->count() }}
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">ST / SP</p>
                   <h5 class="font-weight-bolder mb-0">
-                    11
+                    {{ DB::table('sanksi')->count() }}
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
