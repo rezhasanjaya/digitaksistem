@@ -47,10 +47,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="username" class="form-control-label">Nama Lengkap</label>
-                                <div class="@error('username')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" value="{{ auth()->user()->name }}" type="text" placeholder="Username" id="username" name="username">
-                                        @error('username')
+                                <label for="name" class="form-control-label">Nama</label>
+                                <div class="@error('name')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" value="{{ auth()->user()->name }}" type="text" placeholder="Nama" id="name" name="name">
+                                        @error('name')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                 </div>
@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label for="email" class="form-control-label">Email</label>
                                 <div class="@error('email')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" value="{{ auth()->user()->email }}" type="email" placeholder="@example.com" id="email" name="email">
+                                    <input class="form-control" value="{{ auth()->user()->email }}" type="email" placeholder="Email" id="email" name="email">
                                         @error('email')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -71,9 +71,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="phone" class="form-control-label">No telpon</label>
+                                <label for="phone" class="form-control-label">No Telpon</label>
                                 <div class="@error('phone')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="40770888444" id="phone" name="phone" value="{{ auth()->user()->phone }}">
+                                    <input class="form-control" type="tel" placeholder="No Telpon" id="phone" name="phone" value="{{ auth()->user()->phone }}">
                                         @error('phone')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 <label for="location" class="form-control-label">Lokasi</label>
                                 <div class="@error('location') border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="text" placeholder="Location" id="location" name="location" value="{{ auth()->user()->location }}">
+                                    <input class="form-control" type="text" placeholder="Lokasi" id="location" name="location" value="{{ auth()->user()->location }}">
                                         @error('location')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
