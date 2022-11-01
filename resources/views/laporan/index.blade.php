@@ -17,7 +17,7 @@
                 </select>
                 </div>
                 <div class="col-sm">
-                <a href="#" class="btn bg-gradient-warning" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
+                <a href="#" class="btn bg-gradient-warning" type="button"><i class="fas fa-search me-2"></i>Cari</a>
                 </div>
             </div>
 
@@ -26,8 +26,8 @@
                     <div class="d-flex flex-row justify-content-between">
                         <div>
                             <h5 class="mb-0">Laporan Teguran</h5>
-                        </div>                        
-                        <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
+                        </div>
+                        <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-print me-2 fa-center"></i>Print</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -139,17 +139,8 @@
 </div>
 
 <style>
-  input:required:invalid {
-    color: #adb5bd;
-  }
-  select:required:invalid {
-    color: #adb5bd;
-  }
-  option[value=""][disabled] {
-    display: none;
-  }
-  option {
-    color: #000000;
+  .fa-center {
+  line-height: inherit!important; vertical-align: middle;
   }
 </style>
  

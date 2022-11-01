@@ -17,7 +17,7 @@
                         <div>
                             <h5 class="mb-0">Data Karyawan</h5>
                         </div>
-                        <a href="{{ url('karyawan/create') }}" class="btn bg-gradient-warning btn-sm mb-0" type="button">+&nbsp; Tambah Karyawan</a>
+                        <a href="{{ url('karyawan/create') }}" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-plus me-2 fa-center" ></i>Karyawan</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -92,5 +92,11 @@
         </div>
     </div>
 </div>
+
+<style>
+  .fa-center {
+  line-height: inherit!important; vertical-align: middle;
+  }
+</style>
  
 @endsection

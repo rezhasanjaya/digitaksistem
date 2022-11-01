@@ -33,7 +33,7 @@
                         <div>
                             <h5 class="mb-0">Data Department</h5>                           
                         </div>
-                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button">Tambah Unit</a>
+                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-plus me-2 fa-center" ></i>Tambah Unit</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -86,6 +86,12 @@
         </div>
     </div>
 </div>
+
+<style>
+  .fa-center {
+  line-height: inherit!important; vertical-align: middle;
+  }
+</style>
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >

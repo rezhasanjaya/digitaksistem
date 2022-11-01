@@ -123,7 +123,8 @@
           @csrf
           <div class="form-group">
             <label class="form-label">Upload Profile</label>
-            <input class="form-control" type="file" id="foto" name="foto" required>
+            <input class="form-control" type="file" accept=".jpg,.jpeg,.png" id="foto" name="foto" required>
+            <small class="text-danger text-secondary text-xxs font-weight-bolder">* image file only</small>
           </div>
           </div>
           <div class="modal-footer">

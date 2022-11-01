@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">Data Kontrak Kerja</h5>
                         </div>                        
-                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button">+&nbsp; Tambah Kontrak</a>
+                        <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-plus me-2 fa-center" ></i>Tambah Kontrak</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -100,6 +100,9 @@
   option {
     color: #000000;
   }
+  .fa-center {
+  line-height: inherit!important; vertical-align: middle;
+  }
 </style>
 
 <!-- Modal -->
@@ -172,7 +175,8 @@
 
           <div class="form-group mt-3">
             <label class="form-label">Upload File Kontrak</label>
-            <input class="form-control" type="file" id="dokumen" name="dokumen" required>
+            <input class="form-control" type="file" accept=".pdf" id="dokumen" name="dokumen" required>
+            <small class="text-danger text-secondary text-xxs font-weight-bolder">* .pdf file only</small>
           </div>
           </div>
 
