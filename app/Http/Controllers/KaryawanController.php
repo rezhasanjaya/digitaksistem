@@ -117,7 +117,7 @@ class KaryawanController extends Controller
 
         $karyawan->update($request->all());
         return redirect()->route('karyawan.index')
-            ->with('sukses', 'Data Berhasil Diupdate');
+            ->with('success', 'Data Berhasil Diupdate');
     }
 
 

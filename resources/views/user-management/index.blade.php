@@ -58,7 +58,7 @@
                                     </td>
                                     <td class="text-center">
                                       <form action="" method="POST">                                            
-                                          <a class="btn btn-link text-dark px-2 mb-0" href=""><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                          <a class="btn btn-link text-dark px-2 mb-0" href=""><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
                                           @csrf
                                           @method('DELETE')
                                           <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>

@@ -73,8 +73,8 @@
                                       <a href="{{ url('/assets/file/Dijual-Kios.pdf') }}" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-secondary"><i class="fas fa-file">
                                   </td>
                                   <td class="text-center">
-                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
+                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
+                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                   </td>
                                 </tr>   
                                 <?php endforeach; ?> --}}
@@ -88,13 +88,13 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Tambah Kontrak Kerja</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span >&times;</span>
         </button>
       </div>
       <div class="modal-body">

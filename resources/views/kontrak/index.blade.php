@@ -73,8 +73,8 @@
                                       <a href="{{ url('/assets/file/Dijual-Kios.pdf') }}" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-secondary"><i class="fas fa-file">
                                   </td>
                                   <td class="text-center">
-                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
+                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
+                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                   </td>
                                 </tr>   
                                 <?php endforeach; ?>                                                             
@@ -87,24 +87,40 @@
     </div>
 </div>
 
+<style>
+  input:required:invalid {
+    color: #adb5bd;
+  }
+  select:required:invalid {
+    color: #adb5bd;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000000;
+  }
+</style>
+
 <!-- Modal -->
-<div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Tambah Kontrak Kerja</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span >&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form action="{{ route('kontrak.store') }}" method="POST">
           @csrf
+
           <div class="row mt-1">
-            <div class="col-md-3 mt-2"><label for="karyawan_id" class="form-control-label">Karyawan</label></div>
+            <div class="col-md-3 mt-2"><label for="karyawan_id" class="form-label">Karyawan</label></div>
             <div class="col-md-9 ms-auto">
-              <select class="form-control" id="karyawan_id" name="karyawan_id">
-                <option selected>Pilih Karyawan</option>
+              <select class="form-select" id="karyawan_id" name="karyawan_id" required>
+                <option value="" selected disabled>Pilih Karyawan</option>
                 @foreach ($karyawan as $kyw)
                 @if(old ('karyawan_id')== $kyw->id)
                 <option value="{{ $kyw->id }}" selected>{{ $kyw->nama }}</option> 
@@ -115,13 +131,14 @@
               </select>
             </div>
           </div>
+
           <div class="row mt-3">
             <div class="col-md-3 mt-2">
-              <label for="status" class="form-control-label">Status</label>
+              <label for="status" class="form-label">Status</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <select class="form-control" id="status" name="status">
-                <option selected>Pilih Status Kerja</option>
+              <select class="form-select" id="status" name="status" required>
+                <option value="" selected disabled>Pilih Status Kerja</option>
                 <option value="Tetap"
                   {{ old('status') == 'Tetap' ? 'selected=selected' : '' }}>Tetap
                 </option>
@@ -137,29 +154,31 @@
 
           <div class="row mt-3">
             <div class="col-md-3 mt-2">
-              <label class="form-control-label">Tanggal Mulai</label>
+              <label class="form-label">Tanggal Mulai</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="date" id="tgl_mulai" name="tgl_mulai" value="{{ old('tgl_mulai') }}">
+              <input class="form-control" type="date" id="tgl_mulai" name="tgl_mulai" value="{{ old('tgl_mulai') }}" required>
             </div>
           </div>
 
           <div class="row mt-3">
             <div class="col-md-3 mt-1">
-              <label class="form-control-label">Lama Kontrak (Bulan)</label>
+              <label class="form-label">Lama Kontrak (Bulan)</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="number" id="durasi_kontrak" name="durasi_kontrak" value="{{ old('durasi_kontrak') }}">
+              <input class="form-control" type="number" min="1" id="durasi_kontrak" name="durasi_kontrak" value="{{ old('durasi_kontrak') }}" placeholder="Masukkan Lama Kontrak" required>
             </div>
           </div>
+
           <div class="form-group mt-3">
-            <label class="form-control-label">Upload File Kontrak</label>
-            <input class="form-control" type="file" id="dokumen" name="dokumen">
+            <label class="form-label">Upload File Kontrak</label>
+            <input class="form-control" type="file" id="dokumen" name="dokumen" required>
           </div>
           </div>
+
           <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-warning">Tambah</button>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn bg-gradient-warning">Tambah</button>          
         </form>
       </div>        
     </div>

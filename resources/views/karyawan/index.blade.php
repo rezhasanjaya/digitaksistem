@@ -7,10 +7,10 @@
         <div class="col-12">
             @if ($message = Session::get('success'))
             <div class="alert alert-success fade show card" role="alert">
-                <span class="alert-text"><strong>{{ $message }}!</strong>
+                <span class="alert-text"><strong>{{ $message }}</strong>
                 <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></span>
             </div>
-             @endif
+            @endif
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
@@ -75,11 +75,11 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="{{ route('karyawan.destroy',$karyawan->id) }}" method="POST">                                            
-                                            <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                            <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
-                                            <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" aria-hidden="true"></i>Lihat</a>
+                                            <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                         </form>
                                     </td>
                                 </tr>

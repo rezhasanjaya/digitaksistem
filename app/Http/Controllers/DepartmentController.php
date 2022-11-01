@@ -62,7 +62,7 @@ class DepartmentController extends Controller
 
         $department->update($request->all());
         return redirect()->route('department.index')
-            ->with('sukses', 'Data Berhasil Diupdate');
+            ->with('success', 'Data Berhasil Diupdate');
     }
 
     public function destroy(Department $department)

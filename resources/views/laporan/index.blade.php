@@ -7,7 +7,8 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-2">
-                <select name="perihal" class="default-select2 form-control">
+                <select name="perihal" class="form-select" required>
+                    <option value="" disabled selected>Jenis Sanksi</option>
                     <option value="Teguran">Teguran</option>
                     <option value="Peringatan I">Peringatan I</option>
                     <option value="Peringatan II">Peringatan II</option>
@@ -19,6 +20,7 @@
                 <a href="#" class="btn bg-gradient-warning" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
@@ -135,5 +137,20 @@
         </div>
     </div>
 </div>
+
+<style>
+  input:required:invalid {
+    color: #adb5bd;
+  }
+  select:required:invalid {
+    color: #adb5bd;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000000;
+  }
+</style>
  
 @endsection

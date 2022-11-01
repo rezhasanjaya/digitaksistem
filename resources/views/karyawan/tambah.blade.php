@@ -22,7 +22,7 @@
                               <label for="nik" class="form-label">NIK</label>                            
                           </div>
                           <div class="col-md-8 ">
-                            <input class="form-control @error('nik') is-invalid @enderror" type="number" name="nik" id="nik" placeholder="Masukkan NIK" value="{{ old('nik') }}" required>
+                            <input class="form-control @error('nik') is-invalid @enderror" type="number" min="0" name="nik" id="nik" placeholder="Masukkan NIK" value="{{ old('nik') }}" required>
                             @error('nik')
                             <div class="invalid-feedback">
                               {{ $message }}
@@ -30,7 +30,7 @@
                             @enderror
                           </div>
                           <div class="col-md-2"></div>
-                        </div>                        
+                        </div>
 
                         <div class="row mt-1">
                           <div class="col-md-2">
@@ -54,8 +54,8 @@
                           <div class="col-md-8">
                             <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
                               <option value="" selected disabled>Pilih Jenis Kelamin</option> 
-                              <option value="Laki-Laki" {{ old('jenis_kelamin') == 'Laki-Laki' ? 'selected' : '' }}>
-                                Laki-Laki
+                              <option value="Laki - laki" {{ old('jenis_kelamin') == 'Laki - laki' ? 'selected' : '' }}>
+                                Laki - laki
                               </option>
                               <option value="Perempuan" {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>
                                 Perempuan
@@ -276,7 +276,8 @@
                         <div class="row mt-1">
                           <div class="col-md-2"></div>
                           <div class="col-md-8">
-                            <button type="submit" class="btn bg-gradient-warning btn-sm mt-3 mb-4 float-end">Tambah</button>
+                            <button type="submit" class="btn bg-gradient-warning btn-sm mt-3 mb-4 ms-3 float-end">Tambah</button>
+                            <a class="btn bg-gradient-secondary btn-sm mt-3 mb-4 float-end" href="{{ route('karyawan.index') }}">Batal</a>                            
                           </div>
                           <div class="col-md-2"></div>
                         </div>                        

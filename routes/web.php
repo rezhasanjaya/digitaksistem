@@ -6,7 +6,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KontrakController;
-use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SanksiController;
@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('dashboard', function () {
 		return view('dashboard', ["title" => "Dashboard"]);
 	})->name('dashboard');
-  Route::get('/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/user-profile', [InfoUserController::class, 'store']);
+  Route::get('/user-profile', [UserProfileController::class, 'create']);
+	Route::post('/user-profile', [UserProfileController::class, 'store']);
   Route::resource('department', DepartmentController::class);
 	Route::get('user-management', [UserController::class, 'index']);
   Route::resource('kontrak', KontrakController::class);
