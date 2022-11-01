@@ -38,7 +38,7 @@
                                         Jabatan
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        TTL(Year/Month/Day)
+                                        TTL (Tahun/Bulan/Lahir)
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Unit / Department
@@ -49,10 +49,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
-                                $i = 1;
+                                <?php $i = 1; ?>
                                
-                                foreach ($karyawans as $karyawan) : ?>
+                                @foreach ($karyawans as $karyawan)
                                
                                 <tr>
                                     <td class="ps-4">
@@ -78,12 +77,12 @@
                                             <a class="btn btn-link text-dark px-2 mb-0" href="{{ route('karyawan.edit',$karyawan->id) }}"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger px-2 mb-0"><i class="far fa-trash-alt me-2"></i>Delete</button>
+                                            <button type="submit" onclick="return confirm('Apakah kamu yakin?')" class="btn btn-link text-danger px-2 mb-0" ><i class="far fa-trash-alt me-2"></i>Delete</button>
                                             <a class="btn btn-link text-success px-2 mb-0" href="{{ route('karyawan.show',$karyawan->id) }}"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                         </form>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

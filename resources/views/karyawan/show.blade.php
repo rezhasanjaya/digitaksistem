@@ -43,11 +43,17 @@
                             </tr>
                             <tr>
                             <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Unit</th>
-                            <td class="text-xs font-weight-bold">{{ $karyawan->unit }}</td>
+                            <td class="text-xs font-weight-bold">
+                              {{ $karyawan->unit }} / @foreach ($departments as $department)
+                              @if($karyawan->unit == $department->kode)
+                                {{ $department->department }}
+                              @endif
+                            @endforeach
+                            </td>
                             </tr>
                             <tr>
                             <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Tanggal Masuk</th>
-                            <td class="text-xs font-weight-bold">{{ $karyawan->nik }}</td>
+                            <td class="text-xs font-weight-bold">{{ $karyawan->tanggal_masuk }}</td>
                             </tr>
                             <tr>
                             <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-8">Alamat</th>

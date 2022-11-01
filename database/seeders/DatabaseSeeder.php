@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Department;
 use App\Models\Karyawan;
+use App\Models\Kontrak;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -70,11 +71,29 @@ class DatabaseSeeder extends Seeder
       'alamat' => 'Jakarta',
       'tempat_lahir' => 'Jakarta',
       'tanggal_lahir' => '1996-10-10',
-      'jabatan' => 'Produksi',
+      'jabatan' => 'Operator',
       'agama' => 'Kristen',
       'status_kawin' => 'Belum Menikah',
       'goldar' => 'A-',
       'telp' => '08123456788'
+    ]);
+
+    Kontrak::create([
+      'karyawan_id' => '1',
+      'status' => 'Magang',
+      'tgl_mulai' => '2022-11-01',
+      'tgl_selesai' => '2023-01-01',
+      'durasi_kontrak' => '2',
+      'dokumen' => 'cv_adi.pdf'
+    ]);
+
+    Kontrak::create([
+      'karyawan_id' => '2',
+      'status' => 'Magang',
+      'tgl_mulai' => '2022-11-01',
+      'tgl_selesai' => '2023-01-01',
+      'durasi_kontrak' => '2',
+      'dokumen' => 'cv_reza.pdf'
     ]);
   }
 }

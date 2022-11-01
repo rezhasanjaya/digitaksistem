@@ -104,7 +104,7 @@
                             <label class="form-label">Alamat</label>                         
                           </div>
                           <div class="col-md-8">
-                            <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat" required>{{ old('alamat') }}</textarea>
+                            <textarea class="form-control @error('alamat') is-invalid @enderror" maxlength="255" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat" required>{{ old('alamat') }}</textarea>
                             @error('alamat')
                             <div class="invalid-feedback">
                               {{ $message }}

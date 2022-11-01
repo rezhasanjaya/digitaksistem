@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('kontrak', function (Blueprint $table) {
             $table->id();
             $table->integer('karyawan_id');
-            $table->string('status');
+            $table->enum('status' ,['Tetap', 'Kontrak', 'Magang']);
             $table->date('tgl_mulai');
             $table->date('tgl_selesai');
             $table->integer('durasi_kontrak');

@@ -46,7 +46,7 @@ class KaryawanController extends Controller
             'jenis_kelamin' => 'required',
             'unit' => 'required',
             'tanggal_masuk' => 'required',
-            'alamat' => 'required',
+            'alamat' => 'required|max:255',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'jabatan' => 'required',

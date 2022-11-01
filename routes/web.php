@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/user-profile', [UserProfileController::class, 'create']);
 	Route::post('/user-profile', [UserProfileController::class, 'store']);
   Route::resource('department', DepartmentController::class);
-	Route::get('user-management', [UserController::class, 'index']);
+	Route::resource('user-management', UserController::class);
   Route::resource('kontrak', KontrakController::class);
   Route::resource('sanksi', SanksiController::class);
   Route::resource('karyawan', KaryawanController::class);

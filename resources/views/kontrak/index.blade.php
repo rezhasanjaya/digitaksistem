@@ -46,10 +46,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?php 
-                              $i = 1;
+                              <?php $i = 1; ?>
                              
-                              foreach ($data as $kontrak) : ?>
+                              @foreach ($data as $kontrak)
                                 <tr>
                                   <td class="ps-4">
                                       <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
@@ -74,10 +73,10 @@
                                   </td>
                                   <td class="text-center">
                                     <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
-                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
+                                    <a class="btn btn-link text-success px-2 mb-0" title="Detail Karyawan" href="{{ route('karyawan.show',$kontrak->karyawan_id) }}"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                   </td>
                                 </tr>   
-                                <?php endforeach; ?>                                                             
+                                @endforeach                                                           
                             </tbody>
                         </table>
                     </div>
@@ -142,15 +141,9 @@
             <div class="col-md-9 ms-auto">
               <select class="form-select" id="status" name="status" required>
                 <option value="" selected disabled>Pilih Status Kerja</option>
-                <option value="Tetap"
-                  {{ old('status') == 'Tetap' ? 'selected=selected' : '' }}>Tetap
-                </option>
-                <option value="Kontrak"
-                  {{ old('status') == 'Kontrak' ? 'selected=selected' : '' }}>Kontrak
-                </option>
-                <option value="Magang"
-                  {{ old('status') == 'Magang' ? 'selected=selected' : '' }}>Magang
-                </option>      
+                <option value="Tetap">Tetap</option>
+                <option value="Kontrak">Kontrak</option>
+                <option value="Magang">Magang</option>      
               </select>
             </div>
           </div>

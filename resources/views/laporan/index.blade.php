@@ -36,7 +36,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
+                                        #
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-5">
                                         NIK
@@ -59,9 +59,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              <?php $i = 1; ?>
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                     </td>
                                     <td class="text-center">
                                         <span class="text-secondary text-xs font-weight-bold">2182121492</span>
@@ -139,6 +140,18 @@
 </div>
 
 <style>
+  input:required:invalid {
+    color: #adb5bd;
+  }
+  select:required:invalid {
+    color: #adb5bd;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000000;
+  }
   .fa-center {
   line-height: inherit!important; vertical-align: middle;
   }

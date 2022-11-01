@@ -9,7 +9,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Data Kontrak Kerja</h5>
+                            <h5 class="mb-0">Data Sanksi Karyawan</h5>
                         </div>                        
                         <a data-bs-toggle="modal" data-bs-target="#Tambah" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-plus me-2 fa-center" ></i>Tambah Sanksi</a>
                     </div>
@@ -18,66 +18,63 @@
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        no
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        karyawan
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        status
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        tgl mulai
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        lama kontrak
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        tgl selesai
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        dokumen
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              {{-- <?php 
-                              $i = 1;
-                             
-                              foreach ($data as $kontrak) : ?>
-                                <tr>
-                                  <td class="ps-4">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
+                              <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    #
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Nama
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Tanggal ke HRD
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Perihal
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Tanggal Pelanggaran
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Tanggal selesai
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                  Berkas
+                              </th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                  Action
+                              </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php $i = 1; ?>
+                            <tr>
+                                <td class="ps-4">
+                                    <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
+                                </td>
+                                <td class="text-center">
+                                    <p class="text-xs font-weight-bold mb-0">Barjo</p>
+                                </td>
+                                <td class="text-center">
+                                    <p class="text-xs font-weight-bold mb-0">02-03-2020</p>
+                                </td>
+                                <td class="text-center">
+                                    <p class="text-xs font-weight-bold mb-0">Teguran</p>
+                                </td>
+                                <td class="text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">10-02-2020</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">02-06-2020</span>
+                                </td>
+                                <td class="text-center">
+                                  <a href="{{ url('/assets/file/Dijual-Kios.pdf') }}" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-secondary"><i class="fas fa-file">
+                                </td>
+                                <td class="text-center">
+                                  <a class="btn btn-link text-dark px-2 mb-0" href=""><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
+                                  <a class="btn btn-link text-success px-2 mb-0" title="Detail Karyawan" href="{{ route('karyawan.show',1) }}"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
                                   </td>
-                                  <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->nama }}</p>
-                                  </td>
-                                  <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->status }}</p>
-                                  </td>
-                                  <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->tgl_mulai }}</p>
-                                  </td>
-                                  <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->durasi_kontrak }} Bulan</p>
-                                  </td>
-                                  <td class="text-center">
-                                      <p class="text-xs font-weight-bold mb-0">{{ $kontrak->tgl_selesai->toDateString() }}</p>
-                                  </td>
-                                  <td class="text-center">
-                                      <a href="{{ url('/assets/file/Dijual-Kios.pdf') }}" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Lihat File" class="text-secondary"><i class="fas fa-file">
-                                  </td>
-                                  <td class="text-center">
-                                    <a class="btn btn-link text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt text-dark me-2" ></i>Edit</a>
-                                    <a class="btn btn-link text-success px-2 mb-0" href="#"><i class="fas fa-folder text-success me-2" ></i>Lihat</a>
-                                  </td>
-                                </tr>   
-                                <?php endforeach; ?> --}}
+                              </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -88,6 +85,18 @@
 </div>
 
 <style>
+  input:required:invalid {
+    color: #adb5bd;
+  }
+  select:required:invalid {
+    color: #adb5bd;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000000;
+  }
   .fa-center {
   line-height: inherit!important; vertical-align: middle;
   }
@@ -106,12 +115,13 @@
       <div class="modal-body">
         <form action="{{ route('kontrak.store') }}" method="POST">
           @csrf
+
           <div class="row mt-1">
             <div class="col-md-3 mt-2">
-              <label for="karyawan_id" class="form-control-label">Karyawan</label>
+              <label for="karyawan_id" class="form-label">Karyawan</label>
             </div>
             <div class="col-md-9 ms-auto">
-              {{-- <select class="form-control" id="karyawan_id" name="karyawan_id">
+              {{-- <select class="form-select" id="karyawan_id" name="karyawan_id" required>
                 <option selected>Pilih Karyawan</option>
                 @foreach ($karyawan as $kyw)
                 @if(old ('karyawan_id')== $kyw->id)
@@ -123,51 +133,72 @@
               </select> --}}
             </div>
           </div>
+
           <div class="row mt-3">
             <div class="col-md-3 mt-2">
-              <label for="status" class="form-control-label">Status</label>
+              <label class="form-label">Tanggal Ke HRD</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <select class="form-control" id="status" name="status">
-                <option selected>Pilih Status Kerja</option>
-                <option value="Tetap"
-                  {{ old('status') == 'Tetap' ? 'selected=selected' : '' }}>Tetap
-                </option>
-                <option value="Kontrak"
-                  {{ old('status') == 'Kontrak' ? 'selected=selected' : '' }}>Kontrak
-                </option>
-                <option value="Magang"
-                  {{ old('status') == 'Magang' ? 'selected=selected' : '' }}>Magang
-                </option>      
+              <input class="form-control" type="date" id="tgl_ke_hrd" name="tgl_ke_hrd" value="{{ old('tgl_ke_hrd') }}" required>
+            </div>
+          </div>
+
+          <script>
+            function changeInput() {
+              if ($('#perihal').val() == "Skorsing") {
+                $("#masa_skorsing").attr("disabled", false);
+              } else {
+                $("#masa_skorsing").attr("disabled", true);
+              }
+            }
+          </script>
+
+          <div class="row mt-3">
+            <div class="col-md-3 mt-2">
+              <label for="perihal" class="form-label">Jenis Sangksi</label>
+            </div>
+            <div class="col-md-9 ms-auto">
+              <select class="form-select" id="perihal" name="perihal" onchange="changeInput()" required>
+                <option value="" selected disabled>Pilih Jenis Sanksi</option>
+                <option value="Teguran">Teguran</option>
+                <option value="Peringatan I">Peringatan I</option>
+                <option value="Peringatan II">Peringatan II</option>
+                <option value="Peringatan III">Peringatan III</option>
+                <option value="Skorsing">Skorsing</option>
               </select>
             </div>
           </div>
 
           <div class="row mt-3">
             <div class="col-md-3 mt-2">
-              <label class="form-control-label">Tanggal Mulai</label>
+              <label class="form-label">Tanggal Pelanggaran</label>
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="date" id="tgl_mulai" name="tgl_mulai" value="{{ old('tgl_mulai') }}">
+              <input class="form-control" type="date" id="tgl_pelanggaran" name="tgl_pelanggaran" value="{{ old('tgl_pelanggaran') }}" required>
             </div>
           </div>
 
           <div class="row mt-3">
-            <div class="col-md-3 mt-1">
-              <label class="form-control-label">Lama Kontrak (Bulan)</label>
+            <div class="col-md-3">
+              <label class="form-label">Deskripsi Pelanggaran</label>                            
             </div>
             <div class="col-md-9 ms-auto">
-              <input class="form-control" type="number" id="durasi_kontrak" name="durasi_kontrak" value="{{ old('durasi_kontrak') }}">
+              <textarea class="form-control" maxlength="255" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi" value="{{ old('durasi_kontrak') }}" required></textarea>
             </div>
           </div>
-          <div class="form-group mt-3">
-            <label class="form-control-label">Upload File Kontrak</label>
-            <input class="form-control" type="file" id="dokumen" name="dokumen">
+
+          <div class="row mt-3">
+            <div class="col-md-3">
+              <label class="form-label">Masa Skorsing (Bulan)</label>
+            </div>
+            <div class="col-md-9 ms-auto">
+              <input class="form-control" type="number" min="1" id="masa_skorsing" name="masa_skorsing" value="{{ old('masa_skorsing') }}" disabled>
+            </div>
           </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-warning">Tambah</button>
+
+          <div class="modal-footer">            
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn bg-gradient-warning">Tambah</button>
         </form>
       </div>        
     </div>
