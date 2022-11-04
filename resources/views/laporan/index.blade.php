@@ -1,4 +1,4 @@
-@extends('layouts.user_type.auth')
+@extends('layouts.main')
 
 @section('content')
 
@@ -7,7 +7,8 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-2">
-                <select name="perihal" class="default-select2 form-control">
+                <select name="perihal" class="form-select" required>
+                    <option value="" disabled selected>Jenis Sanksi</option>
                     <option value="Teguran">Teguran</option>
                     <option value="Peringatan I">Peringatan I</option>
                     <option value="Peringatan II">Peringatan II</option>
@@ -16,16 +17,17 @@
                 </select>
                 </div>
                 <div class="col-sm">
-                <a href="#" class="btn bg-gradient-primary" type="button"><i class="fa fa-search"></i> &nbsp;Cari</a>
+                <a href="#" class="btn bg-gradient-warning" type="button"><i class="fas fa-search me-2"></i>Cari</a>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="md-2">Laporan Teguran</h5>
-                        </div>                        
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
+                            <h5 class="mb-0">Laporan Teguran</h5>
+                        </div>
+                        <a href="#" class="btn bg-gradient-warning btn-sm mb-0" type="button"><i class="fas fa-print me-2 fa-center"></i>Print</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -34,7 +36,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
+                                        #
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-5">
                                         NIK
@@ -57,9 +59,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              <?php $i = 1; ?>
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                     </td>
                                     <td class="text-center">
                                         <span class="text-secondary text-xs font-weight-bold">2182121492</span>
@@ -135,5 +138,23 @@
         </div>
     </div>
 </div>
+
+<style>
+  input:required:invalid {
+    color: #adb5bd;
+  }
+  select:required:invalid {
+    color: #adb5bd;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000000;
+  }
+  .fa-center {
+  line-height: inherit!important; vertical-align: middle;
+  }
+</style>
  
 @endsection

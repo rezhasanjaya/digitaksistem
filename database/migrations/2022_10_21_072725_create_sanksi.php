@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('department', function (Blueprint $table) {
-            $table->string('kode')->unique()->primary();
-            $table->string('department');
+        Schema::create('sanksi', function (Blueprint $table) {
+            $table->id();
+            $table->integer('karyawan_id');
+            $table->string('perihal');
+            $table->date('tgl_ke_hrd');
+            $table->date('tgl_pelanggaran');
+            $table->date('tgl_selesai');
+            $table->string('berkas');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department');
+        Schema::dropIfExists('sanksi');
     }
 };

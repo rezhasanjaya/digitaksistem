@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nik')->unique();
             $table->string('nama');
-            $table->enum('jenis_kelamin', ['Laki - Laki', 'Perempuan']);
+            $table->enum('jenis_kelamin', ['Laki - laki', 'Perempuan']);
             $table->string('unit');
             $table->date('tanggal_masuk');
             $table->text('alamat');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
-            $table->string('jabatan');
+            $table->enum('jabatan', ['Manager', 'Leader', 'Supervisor', 'Operator', 'Staff']);
             $table->string('agama');
             $table->string('status_kawin');
             $table->string('goldar');

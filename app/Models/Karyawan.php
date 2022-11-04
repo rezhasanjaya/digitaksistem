@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-// tes 123
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +9,8 @@ class Karyawan extends Model
 {
     use HasFactory;
     public $table = "karyawan";
+    public $timestamps = false;
+    
     protected $fillable = [
         'nik',
         'nama',

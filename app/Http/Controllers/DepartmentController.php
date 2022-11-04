@@ -12,8 +12,14 @@ class DepartmentController extends Controller
 {
     public function index()
     {
+
         $departments = Department::latest()->paginate(20);
         return view('department.index', ["title" => "Departmen/Unit"], compact('departments'));
+    }
+
+    public function show(Department $departments)
+    {
+        return view('department.show', compact('departments'));
     }
 
     public function create()
@@ -37,24 +43,26 @@ class DepartmentController extends Controller
             ->with('success', 'Tambah Unit Berhasil.');
     }
 
-    public function edit(Department $departments)
+    public function edit(Department $department)
     {
-        return view('department.edit', compact('departments'), ["title" => "Edit Data Department"]);
+        return view('department.edit', compact('department'), ["title" => "Edit Data Department"]);
     }
 
-    public function update(Department $department, UpdateDepartmentReq $request)
+
+    public function update(Request $request, Department $department)
     {
         $request->validate([
-            'kode'  => 'required|unique:department|min:1|max:3',
+            'kode'  => 'required|min:1|max:3',
             'department' => 'required',
         ]);
-        $department = new Department;
-        $department->kode = $request->kode;
-        $department->department = $request->department;
-        $department->save();
-        //$department->fill($request->post())->save();
+        // $department = Department::find($id);
+        // $department->kode = $request->kode;
+        // $department->department = $request->department;
+        // $department->update();
+
+        $department->update($request->all());
         return redirect()->route('department.index')
-            ->with('sukses', 'Company Has Been updated successfully');
+            ->with('success', 'Data Berhasil Diupdate');
     }
 
     public function destroy(Department $department)

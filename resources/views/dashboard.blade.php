@@ -1,4 +1,4 @@
-@extends('layouts.user_type.auth')
+@extends('layouts.main')
 
 @section('content')
 
@@ -13,14 +13,14 @@
                 <div>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">KARYAWAN</p>
                   <h5 class="font-weight-bolder mb-0">
-                    13                  
+                    {{ DB::table('karyawan')->count() }}                  
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
               </div>
               <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                  <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                <div class="icon icon-shape bg-gradient-warning shadow text-center border-radius-md">
+                  <i class="ni ni-money-coins text-lg opacity-10" ></i>
                 </div>
               </div>
             </div>
@@ -35,14 +35,14 @@
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">UNIT / BAGIAN</p>
                   <h5 class="font-weight-bolder mb-0">
-                    11
+                    {{ DB::table('department')->count() }}
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
               </div>
               <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                  <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                <div class="icon icon-shape bg-gradient-warning shadow text-center border-radius-md">
+                  <i class="ni ni-world text-lg opacity-10" ></i>
                 </div>
               </div>
             </div>
@@ -57,14 +57,14 @@
                 <div class="numbers">
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">ST / SP</p>
                   <h5 class="font-weight-bolder mb-0">
-                    11
+                    {{ DB::table('sanksi')->count() }}
                   </h5>
                   <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Data</p>
                 </div>
               </div>
               <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                  <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                <div class="icon icon-shape bg-gradient-warning shadow text-center border-radius-md">
+                  <i class="ni ni-paper-diploma text-lg opacity-10" ></i>
                 </div>
               </div>
             </div>
@@ -229,8 +229,8 @@
             borderRadius: 4,
             borderSkipped: false,
             backgroundColor: [
-              '#CEE5D0',
-              '#94B49F'
+              '#ff7100',
+              '#008eff'
             ],
             data: [14, 12],
             maxBarThickness: 10,
