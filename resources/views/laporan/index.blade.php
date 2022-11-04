@@ -23,7 +23,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Laporan Teguran</h5>
+                            <h5 class="md-2">Laporan Teguran</h5>
                         </div>                        
                         <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button"><i class="fa fa-print"></i> &nbsp;Print</a>
                     </div>
