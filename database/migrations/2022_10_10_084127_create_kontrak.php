@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('durasi_kontrak');
             $table->string('dokumen');
             $table->timestamps();
+            $table->engine = "InnoDB";
         });
     }
 

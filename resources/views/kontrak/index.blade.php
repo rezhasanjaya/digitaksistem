@@ -119,12 +119,13 @@
           @csrf
 
           <div class="row mt-1">
-            <div class="col-md-3 mt-2"><label for="karyawan_id" class="form-label">Karyawan</label></div>
+            <div class="col-md-3 mt-2">
+              <label for="karyawan_id" class="form-label">Karyawan</label></div>
             <div class="col-md-9 ms-auto">
               <select class="form-select" id="karyawan_id" name="karyawan_id" required>
                 <option value="" selected disabled>Pilih Karyawan</option>
                 @foreach ($karyawan as $kyw)
-                @if(old ('karyawan_id')== $kyw->id)
+                @if(old ('karyawan_id') == $kyw->id)
                 <option value="{{ $kyw->id }}" selected>{{ $kyw->nama }}</option> 
                 @else
                 <option value="{{ $kyw->id }}">{{ $kyw->nama }}</option> 

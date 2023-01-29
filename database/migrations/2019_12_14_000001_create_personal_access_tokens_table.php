@@ -21,6 +21,7 @@ class CreatePersonalAccessTokensTable extends Migration
             $table->text('abilities')->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
+            $table->engine = "InnoDB";
         });
     }
 

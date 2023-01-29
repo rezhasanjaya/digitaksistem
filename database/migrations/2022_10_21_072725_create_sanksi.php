@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('tgl_selesai');
             $table->string('berkas');
             $table->timestamps();
+            $table->engine = "InnoDB";
         });
     }
 

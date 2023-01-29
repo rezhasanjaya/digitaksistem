@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('kode')->unique()->primary();
             $table->string('department');
             $table->timestamps();
+            $table->engine = "InnoDB";
         });
     }
 

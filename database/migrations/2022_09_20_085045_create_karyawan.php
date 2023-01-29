@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('goldar');
             $table->string('telp');
             $table->timestamps();
+            $table->engine = "InnoDB";
         });
     }
 
